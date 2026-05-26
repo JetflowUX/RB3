@@ -13,76 +13,20 @@
     scroll-behavior: smooth;
   }
   body {
-    @apply bg-purple-base text-white font-sans antialiased overflow-x-hidden;
+    @apply bg-brand-purple-900 text-brand-cream font-sans antialiased selection:bg-brand-gold-500/30 selection:text-brand-gold-300;
   }
   h1, h2, h3, h4, h5, h6 {
     @apply font-serif;
   }
-  /* Accessibility: visible focus indicator for keyboard users */
-  a:focus-visible, button:focus-visible, input:focus-visible, select:focus-visible, textarea:focus-visible {
-    outline: 3px solid rgba(212,175,55,0.6);
-    outline-offset: 3px;
-    border-radius: 0.375rem; /* match rounded-md */
-  }
-}
-@layer components {
-  /* Legacy glass card for backwards compatibility with un-updated components */
-  .glass-card {
-    @apply bg-white/5 backdrop-blur-xl border border-gold/20 rounded-2xl shadow-2xl;
-  }
-  .glass-panel {
-    @apply bg-purple-surface/60 backdrop-blur-lg border border-gold/10;
-  }
-  .btn-primary {
-    @apply inline-flex items-center justify-center px-6 py-3 bg-gold text-purple-base font-medium rounded-full transition-all duration-300 hover:bg-gold-light hover:shadow-[0_0_20px_rgba(212,175,55,0.4)] focus:outline-none focus:ring-2 focus:ring-gold focus:ring-offset-2 focus:ring-offset-purple-base;
-  }
-  .btn-secondary {
-    @apply inline-flex items-center justify-center px-6 py-3 bg-transparent border border-gold text-gold font-medium rounded-full transition-all duration-300 hover:bg-gold/10 focus:outline-none focus:ring-2 focus:ring-gold focus:ring-offset-2 focus:ring-offset-purple-base;
-  }
-  .text-gradient-gold {
-    @apply bg-clip-text text-transparent bg-gradient-to-r from-gold-light via-gold to-gold-dark;
-  }
-}
-/* Skip link styles */
-.skip-link {
-  position: absolute;
-  left: -9999px;
-  top: auto;
-  background: rgba(21,10,36,0.95);
-  color: #D4AF37;
-  padding: 0.5rem 0.75rem;
-  z-index: 9999;
-  border-radius: 0.375rem;
-}
-.skip-link:focus {
-  left: 1rem;
-  top: 1rem;
 }
 @layer utilities {
-  .vertical-rl {
-    writing-mode: vertical-rl;
+  .glass-panel {
+    @apply bg-white/5 backdrop-blur-md border border-white/10 shadow-xl;
   }
-  .text-stroke-gold {
-    -webkit-text-stroke: 1px rgba(212, 175, 55, 0.45);
-    /* provide a subtle fill fallback so text remains visible on noisy backgrounds */
-    color: rgba(232, 199, 106, 0.12);
-    -webkit-text-fill-color: rgba(232, 199, 106, 0.12);
+  .glass-panel-hover {
+    @apply transition-all duration-300 hover:bg-white/10 hover:border-brand-gold-500/30 hover:shadow-2xl hover:shadow-brand-purple-900/50;
   }
-  .text-stroke-gold-hover {
-    -webkit-text-stroke: 1px rgba(212, 175, 55, 0.8);
-    color: rgba(232, 199, 106, 0.16);
-    -webkit-text-fill-color: rgba(232, 199, 106, 0.16);
-  }
-  /* On small screens use a solid gold fill for maximum legibility */
-  @media (max-width: 640px) {
-    .text-stroke-gold {
-      color: rgb(232 199 106 / 1);
-      -webkit-text-fill-color: rgb(232 199 106 / 1);
-      -webkit-text-stroke: 0px rgba(212,175,55,0);
-    }
-  }
-  .noise-overlay {
-    background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 200 200' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noiseFilter'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.65' numOctaves='3' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23noiseFilter)'/%3E%3C/svg%3E");
-    background-size: cover;
+  .text-gold-gradient {
+    @apply bg-clip-text text-transparent bg-gradient-to-r from-brand-gold-400 to-brand-gold-600;
   }
 }

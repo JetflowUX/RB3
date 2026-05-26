@@ -1,159 +1,164 @@
-import React from "react";
-import { motion } from "framer-motion";
-import { Star } from "lucide-react";
-import { Ornament, CornerBrackets, GlassCard } from "./DesignSystem";
-import PixImg from "./PixImg";
+import React from 'react';
+import { motion } from 'framer-motion';
+import { ArrowRight } from 'lucide-react';
 export function Hero() {
-  // images rendered via PixImg (Pexels when key provided, Unsplash fallback)
-
   return (
-    <section className="relative min-h-screen flex items-center pt-28 pb-24 overflow-hidden">
-      {/* Dramatic Vignette Background */}
-      <div className="absolute inset-0 z-0 bg-purple-base">
-        <div className="absolute inset-0 bg-[radial-gradient(circle_at_center,rgba(212,175,55,0.08)_0%,rgba(21,10,36,1)_70%)]" />
-      </div>
+    <section
+      id="home"
+      className="relative min-h-screen flex items-center pt-24 pb-12 overflow-hidden">
+      
+      {/* Background subtle glow */}
+      <div className="absolute top-1/4 -left-1/4 w-1/2 h-1/2 bg-brand-purple-700/30 rounded-full blur-[120px] pointer-events-none"></div>
+      <div className="absolute bottom-0 right-0 w-1/3 h-1/3 bg-brand-gold-900/10 rounded-full blur-[100px] pointer-events-none"></div>
 
-      {/* Vertical Label removed per request */}
+      <div className="max-w-7xl mx-auto px-6 lg:px-12 w-full relative z-10">
+        <div className="grid grid-cols-1 lg:grid-cols-12 gap-12 lg:gap-8 items-center">
+          {/* Text Content */}
+          <div className="lg:col-span-7 order-2 lg:order-1 flex flex-col justify-center">
+            <motion.div
+              initial={{
+                opacity: 0,
+                y: 20
+              }}
+              animate={{
+                opacity: 1,
+                y: 0
+              }}
+              transition={{
+                duration: 0.8,
+                delay: 0.2
+              }}>
+              
+              <p className="text-brand-gold-400 text-xs md:text-sm uppercase tracking-[0.3em] font-medium mb-6 flex items-center gap-4">
+                <span className="w-12 h-px bg-brand-gold-500/50"></span>
+                Charlotte, NC — Est. 2018
+              </p>
+            </motion.div>
 
-      <div className="relative z-10 max-w-7xl mx-auto px-6 lg:px-12 w-full">
-        <div className="grid lg:grid-cols-12 gap-10 lg:gap-12 items-center">
-          {/* Left: Editorial Typography */}
-          <motion.div
-            initial={{
-              opacity: 0,
-              y: 30,
-            }}
-            animate={{
-              opacity: 1,
-              y: 0,
-            }}
-            transition={{
-              duration: 0.8,
-              ease: "easeOut",
-            }}
-            className="lg:col-span-7 relative"
-          >
-            <div className="flex items-center gap-4 mb-8">
-              <Ornament className="w-4 h-4 text-gold animate-pulse-slow shrink-0" />
-              <div className="h-px w-12 bg-gold/40 shrink-0" />
-              <span className="text-xs font-medium tracking-widest uppercase text-gold-light">
-                Charlotte's Premier Salon
+            <motion.h1
+              className="text-5xl md:text-7xl lg:text-8xl font-serif leading-[1.1] mb-8"
+              initial={{
+                opacity: 0,
+                y: 30
+              }}
+              animate={{
+                opacity: 1,
+                y: 0
+              }}
+              transition={{
+                duration: 0.8,
+                delay: 0.4
+              }}>
+              
+              <span className="block text-brand-cream/90 italic mb-2">
+                We cut the
               </span>
-            </div>
-
-            <h1 className="font-serif leading-[0.95] mb-10 relative z-10">
-              <span className="block text-3xl sm:text-4xl md:text-5xl font-normal mb-3 text-white/90">
-                We Cut the
-              </span>
-              <span className="block text-4xl sm:text-5xl md:text-[6.5rem] lg:text-[8.5rem] italic text-gradient-gold relative leading-none pb-4">
-                Best Hair
-                <svg
-                  className="absolute -bottom-1 md:bottom-0 left-0 w-3/4 h-3 text-gold/40"
-                  viewBox="0 0 100 20"
-                  preserveAspectRatio="none"
-                >
-                  <path
-                    d="M0,10 Q50,20 100,0"
-                    fill="none"
-                    stroke="currentColor"
-                    strokeWidth="2"
-                  />
-                </svg>
-              </span>
-              <span className="block text-xl sm:text-2xl md:text-3xl font-normal mt-4 text-white/90">
+              <span className="block text-brand-cream">Best Hair</span>
+              <span className="block text-brand-cream/70 text-4xl md:text-6xl lg:text-7xl mt-4">
                 in Charlotte.
               </span>
-            </h1>
+            </motion.h1>
 
-            <p className="text-base md:text-lg text-white/70 mb-10 max-w-md font-light leading-relaxed border-l border-gold/20 pl-6">
-              Experience the Rock Boss standard. Precision cuts, masterful
-              color, and an editorial approach to everyday beauty.
-            </p>
-
-            <div className="flex flex-col sm:flex-row gap-4">
-              <a href="#booking" className="btn-primary">
-                Book Appointment
+            <motion.div
+              initial={{
+                opacity: 0,
+                y: 20
+              }}
+              animate={{
+                opacity: 1,
+                y: 0
+              }}
+              transition={{
+                duration: 0.8,
+                delay: 0.6
+              }}
+              className="flex flex-wrap items-center gap-6">
+              
+              <a
+                href="#book"
+                className="group relative inline-flex items-center justify-center px-8 py-4 text-sm uppercase tracking-widest font-medium text-brand-purple-900 bg-brand-gold-500 overflow-hidden rounded-full transition-all hover:scale-105">
+                
+                <span className="relative z-10 flex items-center gap-2">
+                  Book Your Cut
+                  <ArrowRight
+                    size={16}
+                    className="group-hover:translate-x-1 transition-transform" />
+                  
+                </span>
+                <div className="absolute inset-0 bg-brand-gold-400 transform scale-x-0 origin-left group-hover:scale-x-100 transition-transform duration-500 ease-out"></div>
               </a>
-              <a href="#services" className="btn-secondary">
+
+              <a
+                href="#services"
+                className="text-sm uppercase tracking-widest text-brand-cream hover:text-brand-gold-400 transition-colors border-b border-transparent hover:border-brand-gold-400 pb-1">
+                
                 View Services
               </a>
-            </div>
-          </motion.div>
+            </motion.div>
+          </div>
 
-          {/* Right: Image Collage */}
-          <motion.div
-            initial={{
-              opacity: 0,
-              scale: 0.95,
-            }}
-            animate={{
-              opacity: 1,
-              scale: 1,
-            }}
-            transition={{
-              duration: 0.8,
-              delay: 0.2,
-              ease: "easeOut",
-            }}
-            className="lg:col-span-5 relative h-64 md:h-[420px] lg:h-[600px] hidden md:block"
-          >
-            {/* Primary Portrait */}
-            <div className="absolute top-0 right-0 w-[80%] md:w-[85%] h-[70%] md:h-[60%] z-10">
-              <CornerBrackets />
-              <PixImg
-                query={"hair salon interior"}
-                srcOverride={"/assets/pexels-7195805.jpg"}
-                fallback={"/assets/pexels-7195805.jpg"}
-                alt={"Luxury Hair Salon Interior"}
-                className={
-                  "w-full h-full object-cover grayscale-[20%] contrast-125"
-                }
-              />
-            </div>
+          {/* Image Content */}
+          <div className="lg:col-span-5 order-1 lg:order-2 relative">
+            <motion.div
+              initial={{
+                opacity: 0,
+                scale: 0.95
+              }}
+              animate={{
+                opacity: 1,
+                scale: 1
+              }}
+              transition={{
+                duration: 1,
+                delay: 0.3
+              }}
+              className="relative aspect-[3/4] md:aspect-[4/5] lg:aspect-[3/4] w-full max-w-md mx-auto lg:max-w-none lg:ml-auto">
+              
+              <div className="absolute inset-0 bg-brand-purple-800 rounded-t-full rounded-b-3xl overflow-hidden">
+                <img
+                  src="https://images.unsplash.com/photo-1521590832167-7bcbfaa6381f?auto=format&fit=crop&w=1200&q=80"
+                  alt="Barber styling hair in a moody salon"
+                  className="w-full h-full object-cover opacity-90 hover:opacity-100 transition-opacity duration-700 mix-blend-luminosity hover:mix-blend-normal" />
+                
+                <div className="absolute inset-0 bg-gradient-to-t from-brand-purple-900 via-transparent to-transparent opacity-60"></div>
+              </div>
 
-            {/* Secondary Portrait */}
-            <div className="absolute bottom-0 left-0 w-[55%] md:w-[50%] h-[45%] md:h-[40%] z-20 border border-gold/20 p-1 bg-purple-base">
-              <PixImg
-                query={"hair model portrait"}
-                srcOverride={"/assets/pexels-16974331.jpg"}
-                fallback={"/assets/pexels-16974331.jpg"}
-                alt={"Hair Model"}
-                className={"w-full h-full object-cover"}
-              />
-            </div>
+              {/* Decorative elements */}
+              <div className="absolute -bottom-6 -left-6 w-32 h-32 border border-brand-gold-500/30 rounded-full"></div>
+              <div className="absolute top-12 -right-4 w-24 h-24 border border-brand-gold-500/20 rounded-full"></div>
 
-            {/* Floating Review Card — positioned safely within column */}
-            <div className="absolute bottom-8 right-0 z-30 w-64">
-              <GlassCard className="p-5">
-                <CornerBrackets />
-                <div className="relative mb-3 z-20">
-                  <div className="flex items-center justify-center gap-1">
-                    {[...Array(5)].map((_, i) => (
-                      <Star key={i} className="w-3 h-3 text-gold fill-gold" />
-                    ))}
-                  </div>
-                  <Ornament className="w-4 h-4 text-gold/50 absolute right-0 top-0" />
+              {/* Floating badge */}
+              <motion.div
+                initial={{
+                  opacity: 0,
+                  x: 20
+                }}
+                animate={{
+                  opacity: 1,
+                  x: 0
+                }}
+                transition={{
+                  duration: 0.8,
+                  delay: 1
+                }}
+                className="absolute top-1/4 -right-4 md:-right-12 glass-panel bg-brand-purple-900/60 p-4 rounded-2xl flex items-center gap-4">
+                
+                <div className="w-12 h-12 rounded-full bg-brand-gold-500/20 flex items-center justify-center text-brand-gold-400 font-serif italic text-xl">
+                  RB3
                 </div>
-                <p className="text-xs text-white/80 italic mb-3 relative z-20 leading-relaxed text-center">
-                  "Absolutely transformed my look. The attention to detail at
-                  RB3 is unmatched in Charlotte."
-                </p>
-                <div className="text-[10px] font-medium text-gold uppercase tracking-widest relative z-20 text-center">
-                  — Sarah M.
+                <div>
+                  <p className="text-xs uppercase tracking-wider text-brand-cream/60">
+                    Signature
+                  </p>
+                  <p className="text-sm font-medium text-brand-cream">
+                    Rock Boss Style
+                  </p>
                 </div>
-              </GlassCard>
-            </div>
-          </motion.div>
+              </motion.div>
+            </motion.div>
+          </div>
         </div>
       </div>
+    </section>);
 
-      {/* Scroll Indicator — pinned to bottom, won't overlap content */}
-      <div className="hidden md:flex md:flex-col absolute bottom-6 left-1/2 -translate-x-1/2 items-center gap-3 z-20">
-        <span className="text-[10px] uppercase tracking-[0.3em] text-gold/60">
-          Scroll
-        </span>
-        <div className="w-px h-10 bg-gradient-to-b from-gold/60 to-transparent" />
-      </div>
-    </section>
-  );
 }

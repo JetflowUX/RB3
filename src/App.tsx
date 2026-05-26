@@ -1,34 +1,27 @@
-import React from "react";
-import { BackgroundGlow } from "./components/BackgroundGlow";
-import { Navbar } from "./components/Navbar";
-import { Hero } from "./components/Hero";
-import { Marquee } from "./components/Marquee";
-import { Services } from "./components/Services";
-import { About } from "./components/About";
-import { Stylists } from "./components/Stylists";
-import { Gallery } from "./components/Gallery";
-import { Testimonials } from "./components/Testimonials";
-import { Booking } from "./components/Booking";
-import { Footer } from "./components/Footer";
+import React from 'react';
+import { Nav } from './components/Nav';
+import { Hero } from './components/Hero';
+import { About } from './components/About';
+import { Services } from './components/Services';
+import { Stylists } from './components/Stylists';
+import { Gallery } from './components/Gallery';
+import { Testimonials } from './components/Testimonials';
+import { BookingCta } from './components/BookingCta';
+import { Footer } from './components/Footer';
 export function App() {
   return (
-    <div className="min-h-screen bg-purple-base text-white selection:bg-gold/30 selection:text-white">
-      <BackgroundGlow />
-      <Navbar />
-
-      <main id="main" role="main">
+    <div className="min-h-screen bg-brand-purple-900 text-brand-cream selection:bg-brand-gold-500/30 selection:text-brand-gold-300">
+      <Nav />
+      <main>
         <Hero />
-        <Marquee />
-        <Services />
         <About />
+        <Services />
         <Stylists />
         <Gallery />
-        <Marquee />
         <Testimonials />
-        <Booking />
+        <BookingCta />
       </main>
-
       <Footer />
-    </div>
-  );
+    </div>);
+
 }

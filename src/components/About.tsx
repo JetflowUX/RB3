@@ -1,161 +1,104 @@
-import { motion } from "framer-motion";
-import { CornerBrackets } from "./DesignSystem";
-import PixImg from "./PixImg";
+import React from 'react';
+import { motion } from 'framer-motion';
 export function About() {
   return (
-    <section id="about" className="py-32 relative z-10 overflow-hidden">
-      {/* Giant Watermark — show only on large screens and keep behind content */}
-      <div className="absolute right-8 top-1/2 -translate-y-1/2 hidden lg:block text-[8rem] lg:text-[18rem] font-serif italic text-stroke-gold pointer-events-none -z-10 leading-none select-none">
-        3
-      </div>
-
-      <div className="max-w-7xl mx-auto px-6 lg:px-8">
-        <div className="grid lg:grid-cols-2 gap-16 lg:gap-20 items-center">
-          {/* Image Collage Side */}
+    <section id="about" className="py-24 lg:py-32 relative bg-brand-purple-800">
+      <div className="max-w-7xl mx-auto px-6 lg:px-12">
+        <div className="grid grid-cols-1 lg:grid-cols-2 gap-16 lg:gap-24 items-center">
           <motion.div
             initial={{
               opacity: 0,
-              x: -30,
+              y: 30
             }}
             whileInView={{
               opacity: 1,
-              x: 0,
+              y: 0
             }}
             viewport={{
               once: true,
-              margin: "-100px",
+              margin: '-100px'
             }}
             transition={{
-              duration: 0.8,
+              duration: 0.8
             }}
-            className="relative h-[600px] lg:h-[700px] hidden md:block"
-          >
-            {/* Primary Image */}
-            <div className="absolute top-0 left-0 w-[75%] h-[75%] z-10">
-              <CornerBrackets />
-              {/** try pixabay first, fallback to Unsplash source */}
-              <PixImg
-                query={"stylist working"}
-                srcOverride={"/assets/pexels-7755226.jpg"}
-                fallback={"/assets/pexels-7755226.jpg"}
-                className={"w-full h-full object-cover grayscale-[30%]"}
-                alt={"Stylist working on client's hair"}
-              />
+            className="relative">
+            
+            <div className="aspect-[4/5] w-full max-w-md mx-auto lg:mx-0 bg-brand-purple-900 rounded-sm overflow-hidden relative">
+              <img
+                src="https://images.unsplash.com/photo-1560066984-138dadb4c035?auto=format&fit=crop&w=1000&q=80"
+                alt="Luxurious dark salon interior"
+                className="w-full h-full object-cover opacity-80" />
+              
+              <div className="absolute inset-0 bg-brand-purple-900/20 mix-blend-multiply"></div>
             </div>
-
-            {/* Secondary Image Overlapping */}
-            <div className="absolute bottom-0 right-0 w-[55%] h-[45%] z-20 border border-gold/20 p-2 bg-purple-base">
-              <PixImg
-                query={"hair detail texture"}
-                srcOverride={"/assets/pexels-10647102.jpg"}
-                fallback={"/assets/pexels-10647102.jpg"}
-                className={"w-full h-full object-cover"}
-                alt={"Hair detail"}
-              />
+            {/* Offset smaller image */}
+            <div className="absolute -bottom-12 -right-6 md:-right-12 w-2/3 aspect-square bg-brand-purple-700 p-2 glass-panel hidden sm:block">
+              <img
+                src="https://images.unsplash.com/photo-1622286342621-4bd786c2447c?auto=format&fit=crop&w=800&q=80"
+                alt="Premium salon chair"
+                className="w-full h-full object-cover" />
+              
             </div>
           </motion.div>
 
-          {/* Text Side */}
           <motion.div
             initial={{
               opacity: 0,
-              x: 30,
+              x: 30
             }}
             whileInView={{
               opacity: 1,
-              x: 0,
+              x: 0
             }}
             viewport={{
               once: true,
-              margin: "-100px",
+              margin: '-100px'
             }}
             transition={{
               duration: 0.8,
+              delay: 0.2
             }}
-            className="relative"
-          >
-            {/* Vertical Label — sits to the LEFT of the content, properly */}
-            <div className="absolute -left-8 top-0 hidden lg:flex items-start h-full pointer-events-none">
-              <span className="vertical-rl rotate-180 text-gold tracking-[0.3em] text-[10px] uppercase whitespace-nowrap">
-                THE ROCK BOSS STORY
+            className="flex flex-col justify-center">
+            
+            <div className="flex items-center gap-4 mb-8">
+              <span className="text-brand-gold-500 font-serif text-xl italic">
+                01
+              </span>
+              <span className="w-12 h-px bg-brand-gold-500/30"></span>
+              <span className="text-xs uppercase tracking-[0.2em] text-brand-gold-400">
+                Our Story
               </span>
             </div>
 
-            <div className="flex items-center gap-4 mb-6">
-              <div className="h-px w-8 bg-gold/40" />
-              <h2 className="text-xs font-medium tracking-widest uppercase text-gold">
-                Heritage
-              </h2>
-            </div>
+            <h2 className="text-4xl md:text-5xl font-serif mb-8 leading-tight">
+              More than a haircut.
+              <br />
+              <span className="italic text-brand-cream/70">A statement.</span>
+            </h2>
 
-            <h3 className="text-3xl md:text-4xl lg:text-5xl font-serif font-bold mb-4 leading-[1.05]">
-              Redefining Luxury <br />
-              <span className="italic text-white/80 font-light">
-                in Charlotte
-              </span>
-            </h3>
-
-            {/* Signature Flourish */}
-            <svg
-              className="w-32 h-8 text-gold mb-10"
-              viewBox="0 0 100 30"
-              fill="none"
-              stroke="currentColor"
-              strokeWidth="1.5"
-            >
-              <path d="M5,25 Q30,5 50,20 T95,10" />
-            </svg>
-
-            <div className="space-y-6 text-white/70 font-light text-base md:text-lg mb-12">
+            <div className="space-y-6 text-brand-cream/70 font-light leading-relaxed text-lg">
               <p>
-                At RB3, we believe your hair is your ultimate accessory. Founded
-                on the principle of the "Rock Boss" mentality—owning your look
-                with absolute confidence—we've created a space where high-end
-                editorial styling meets everyday wearability.
+                Founded in the heart of Charlotte, RB3 was born from a singular
+                vision: to elevate the standard of grooming and styling. We
+                don't just cut hair; we sculpt confidence.
               </p>
               <p>
-                Our team of master stylists continually refine their craft,
-                bringing global trends and innovative techniques right here to
-                Charlotte, NC. Whether you're looking for a subtle refresh or a
-                complete transformation, we deliver results that turn heads.
+                Our space is designed as a sanctuary for those who appreciate
+                the finer details. From the ambient lighting to the precision of
+                our shears, every element is curated to provide an unparalleled
+                experience. We blend classic barbering techniques with modern
+                editorial aesthetics.
               </p>
             </div>
 
-            {/* Editorial Stats */}
-            <div className="grid grid-cols-1 sm:grid-cols-3 gap-6 md:gap-8 pt-2">
-              <div>
-                <div className="text-4xl md:text-5xl lg:text-6xl font-serif italic text-gold mb-3 leading-none">
-                  10+
-                </div>
-                <div className="h-px w-full bg-gold/20 mb-3" />
-                <div className="text-[10px] uppercase tracking-[0.2em] text-white/50">
-                  Years Exp
-                </div>
-              </div>
-              <div>
-                <div className="text-4xl md:text-5xl lg:text-6xl font-serif italic text-gold mb-3 leading-none">
-                  5k+
-                </div>
-                <div className="h-px w-full bg-gold/20 mb-3" />
-                <div className="text-[10px] uppercase tracking-[0.2em] text-white/50">
-                  Happy Clients
-                </div>
-              </div>
-              <div>
-                <div className="text-4xl md:text-5xl lg:text-6xl font-serif italic text-gold mb-3 leading-none">
-                  15
-                </div>
-                <div className="h-px w-full bg-gold/20 mb-3" />
-                <div className="text-[10px] uppercase tracking-[0.2em] text-white/50">
-                  Beauty Awards
-                </div>
-              </div>
+            <div className="mt-12 pt-8 border-t border-white/10">
+              <p className="font-serif italic text-2xl text-brand-cream/90">
+                "The Rock Boss standard is uncompromising."
+              </p>
             </div>
           </motion.div>
         </div>
       </div>
-    </section>
-  );
-}
+    </section>);
 
-// Uses shared PixImg component from ./PixImg
+}

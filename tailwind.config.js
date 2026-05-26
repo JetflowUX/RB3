@@ -7,30 +7,29 @@ export default {
   theme: {
     extend: {
       colors: {
-        purple: {
-          base: '#150A24',
-          surface: '#1E0B36',
-          light: '#2A1247'
-        },
-        gold: {
-          DEFAULT: '#D4AF37',
-          light: '#E8C76A',
-          dark: '#AA8C2C'
+        brand: {
+          purple: {
+            900: '#130722', // Deepest background
+            800: '#1a0b2e', // Main background
+            700: '#241043', // Surface
+            600: '#2d1b4e', // Lighter surface
+          },
+          gold: {
+            300: '#f9e79f',
+            400: '#f4d03f', // Bright accent
+            500: '#d4af37', // Main gold
+            600: '#c9a961', // Muted gold
+            700: '#9e8130', // Dark gold
+          },
+          cream: '#fdfbf7',
         }
       },
       fontFamily: {
         sans: ['Inter', 'sans-serif'],
-        serif: ['Playfair Display', 'serif']
+        serif: ['Playfair Display', 'serif'],
       },
-      animation: {
-        'marquee': 'marquee 25s linear infinite',
-        'pulse-slow': 'pulse 4s cubic-bezier(0.4, 0, 0.6, 1) infinite',
-      },
-      keyframes: {
-        marquee: {
-          '0%': { transform: 'translateX(0%)' },
-          '100%': { transform: 'translateX(-50%)' },
-        }
+      backgroundImage: {
+        'glass-gradient': 'linear-gradient(135deg, rgba(255, 255, 255, 0.05) 0%, rgba(255, 255, 255, 0.01) 100%)',
       }
     },
   },

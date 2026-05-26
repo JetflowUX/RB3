@@ -1,134 +1,125 @@
-import React from "react";
-import { motion } from "framer-motion";
-import { Instagram } from "lucide-react";
-import { Ornament, CornerBrackets } from "./DesignSystem";
-import PixImg from "./PixImg";
+import React from 'react';
+import { motion } from 'framer-motion';
 const stylists = [
-  {
-    name: "Elena Vance",
-    specialty: "Master Colorist & Balayage",
-    image: "/assets/pexels-7755237.jpg",
-    handle: "@elenadoeshair",
-  },
-  {
-    name: "Marcus Chen",
-    specialty: "Precision Cuts & Styling",
-    image: "/assets/pexels-7755240.jpg",
-    handle: "@marcus.cuts",
-  },
-  {
-    name: "Sophia Laurent",
-    specialty: "Extensions & Bridal",
-    image: "/assets/pexels-12285002.jpg",
-    handle: "@sophia.styles",
-  },
-];
+{
+  name: 'Marcus Vance',
+  title: 'Master Barber / Founder',
+  bio: '15 years of precision cutting. The original Rock Boss.',
+  image:
+  'https://images.unsplash.com/photo-1503951914875-452162b0f3f1?auto=format&fit=crop&w=800&q=80'
+},
+{
+  name: 'Elena Rostova',
+  title: 'Senior Colorist',
+  bio: 'Editorial styling and custom color formulations.',
+  image:
+  'https://images.unsplash.com/photo-1595475207225-428b62bda831?auto=format&fit=crop&w=800&q=80'
+},
+{
+  name: 'Julian Hayes',
+  title: 'Style Director',
+  bio: 'Specializing in modern texture and classic tapers.',
+  image:
+  'https://images.unsplash.com/photo-1633681926022-84c23e8cb5d6?auto=format&fit=crop&w=800&q=80'
+}];
 
 export function Stylists() {
   return (
-    <section id="stylists" className="py-32 relative z-10">
-      <div className="max-w-7xl mx-auto px-6 lg:px-8">
-        {/* Asymmetric Header */}
-        <div className="flex flex-col md:flex-row md:items-end justify-between mb-24 gap-8">
-          <div className="max-w-2xl">
+    <section
+      id="stylists"
+      className="py-24 lg:py-32 relative bg-brand-purple-800">
+      
+      <div className="max-w-7xl mx-auto px-6 lg:px-12">
+        <div className="text-center mb-16 md:mb-24">
+          <motion.div
+            initial={{
+              opacity: 0,
+              y: 20
+            }}
+            whileInView={{
+              opacity: 1,
+              y: 0
+            }}
+            viewport={{
+              once: true
+            }}
+            transition={{
+              duration: 0.6
+            }}
+            className="flex flex-col items-center">
+            
             <div className="flex items-center gap-4 mb-6">
-              <Ornament className="w-4 h-4 text-gold" />
-              <h2 className="text-xs font-medium tracking-widest uppercase text-gold">
-                Meet The Team
-              </h2>
-              <div className="h-px w-12 bg-gold/40" />
+              <span className="w-8 h-px bg-brand-gold-500/30"></span>
+              <span className="text-brand-gold-500 font-serif text-xl italic">
+                03
+              </span>
+              <span className="text-xs uppercase tracking-[0.2em] text-brand-gold-400">
+                The Team
+              </span>
+              <span className="w-8 h-px bg-brand-gold-500/30"></span>
             </div>
-            <h3 className="text-3xl md:text-5xl font-serif font-bold leading-none">
-              The Artists Behind <br className="hidden md:block" />
-              <span className="italic text-white/80 font-light">the Chair</span>
-            </h3>
-          </div>
-          <div className="flex items-center gap-6">
-            <div className="hidden md:block h-px w-24 bg-gold/20" />
-            <a href="#booking" className="btn-secondary whitespace-nowrap">
-              Join Our Team
-            </a>
-          </div>
+            <h2 className="text-4xl md:text-6xl font-serif mb-6">
+              Meet the Artists
+            </h2>
+            <p className="text-brand-cream/60 max-w-2xl mx-auto text-sm leading-relaxed">
+              Our roster of elite stylists and barbers bring decades of combined
+              experience, continuous education, and an uncompromising eye for
+              detail.
+            </p>
+          </motion.div>
         </div>
 
-        {/* Staggered Grid */}
-        <div className="grid grid-cols-1 md:grid-cols-3 gap-8 md:gap-12">
-          {stylists.map((stylist, index) => (
-            <motion.div
-              key={index}
-              initial={{
-                opacity: 0,
-                y: 30,
-              }}
-              whileInView={{
-                opacity: 1,
-                y: 0,
-              }}
-              viewport={{
-                once: true,
-                margin: "-50px",
-              }}
-              transition={{
-                duration: 0.6,
-                delay: index * 0.2,
-              }}
-              className={`group relative aspect-[3/4] ${index === 1 ? "md:mt-24" : index === 2 ? "md:mt-12" : ""}`}
-            >
-              <CornerBrackets />
-
-              <div className="w-full h-full overflow-hidden relative bg-purple-surface">
-                <PixImg
-                  query={stylist.name + " stylist portrait"}
-                  srcOverride={stylist.image}
-                  alt={stylist.name}
-                  className="w-full h-full object-cover transition-transform duration-1000 group-hover:scale-105 grayscale-[20%]"
-                />
-
-                {/* Gradient Overlay */}
-                <div className="absolute inset-0 bg-gradient-to-t from-purple-base via-purple-base/20 to-transparent opacity-60 group-hover:opacity-100 transition-opacity duration-500" />
-
-                {/* Outline Numeral */}
-                <div className="absolute top-4 left-4 text-6xl font-serif italic text-stroke-gold opacity-50">
-                  0{index + 1}
-                </div>
-
-                {/* Vertical Role */}
-                <div className="absolute top-8 right-4 vertical-rl rotate-180 text-[10px] tracking-[0.3em] text-gold uppercase">
-                  {stylist.specialty}
-                </div>
-
-                {/* Content Bottom */}
-                <div className="absolute bottom-0 left-0 right-0 p-8 transform translate-y-8 group-hover:translate-y-0 transition-transform duration-500">
-                  <h4 className="text-2xl md:text-3xl font-serif font-bold text-white mb-6">
-                    {stylist.name}
-                  </h4>
-
-                  <div className="h-px w-full bg-gold/20 mb-4 opacity-0 group-hover:opacity-100 transition-opacity duration-500 delay-100" />
-
-                  {/* Hover Reveal Actions */}
-                  <div className="flex items-center justify-between opacity-0 group-hover:opacity-100 transition-opacity duration-500 delay-200">
-                    <a
-                      href={`https://instagram.com/${stylist.handle.replace("@", "")}`}
-                      target="_blank"
-                      rel="noopener noreferrer"
-                      className="flex items-center gap-2 text-white/60 hover:text-gold text-xs tracking-wider"
-                    >
-                      <Instagram className="w-4 h-4" />
-                      {stylist.handle}
-                    </a>
-                    <a
-                      href="#booking"
-                      className="text-xs font-medium text-gold hover:text-gold-light uppercase tracking-[0.2em]"
-                    >
-                      Book
-                    </a>
-                  </div>
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 lg:gap-12">
+          {stylists.map((stylist, idx) =>
+          <motion.div
+            key={stylist.name}
+            initial={{
+              opacity: 0,
+              y: 30
+            }}
+            whileInView={{
+              opacity: 1,
+              y: 0
+            }}
+            viewport={{
+              once: true
+            }}
+            transition={{
+              duration: 0.6,
+              delay: idx * 0.2
+            }}
+            className="group relative">
+            
+              <div className="aspect-[3/4] w-full bg-brand-purple-900 overflow-hidden relative mb-6">
+                <img
+                src={stylist.image}
+                alt={stylist.name}
+                className="w-full h-full object-cover opacity-80 group-hover:opacity-100 group-hover:scale-105 transition-all duration-700 mix-blend-luminosity group-hover:mix-blend-normal" />
+              
+                {/* Glass overlay on hover */}
+                <div className="absolute inset-0 bg-brand-purple-900/80 backdrop-blur-sm opacity-0 group-hover:opacity-100 transition-opacity duration-500 flex flex-col items-center justify-center p-8 text-center">
+                  <p className="text-brand-cream/90 font-light mb-8 italic">
+                    "{stylist.bio}"
+                  </p>
+                  <a
+                  href="#book"
+                  className="inline-flex items-center justify-center px-6 py-2 text-xs uppercase tracking-widest font-medium text-brand-cream border border-brand-gold-500/50 hover:bg-brand-gold-500 hover:text-brand-purple-900 hover:border-brand-gold-500 transition-all rounded-full">
+                  
+                    Book with {stylist.name.split(' ')[0]}
+                  </a>
                 </div>
               </div>
+
+              <div className="text-center">
+                <h3 className="text-2xl font-serif mb-1">{stylist.name}</h3>
+                <p className="text-brand-gold-400 text-xs uppercase tracking-widest">
+                  {stylist.title}
+                </p>
+              </div>
             </motion.div>
-          ))}
+          )}
         </div>
       </div>
-    </section>
-  );
+    </section>);
+
 }
