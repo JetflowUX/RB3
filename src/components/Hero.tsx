@@ -2,7 +2,10 @@ import React from "react";
 import { motion } from "framer-motion";
 import { Star } from "lucide-react";
 import { Ornament, CornerBrackets, GlassCard } from "./DesignSystem";
+import PixImg from "./PixImg";
 export function Hero() {
+  // images rendered via PixImg (Pexels when key provided, Unsplash fallback)
+
   return (
     <section className="relative min-h-screen flex items-center pt-28 pb-24 overflow-hidden">
       {/* Dramatic Vignette Background */}
@@ -97,23 +100,25 @@ export function Hero() {
             {/* Primary Portrait */}
             <div className="absolute top-0 right-0 w-[80%] md:w-[85%] h-[70%] md:h-[60%] z-10">
               <CornerBrackets />
-              <img
-                src="https://source.unsplash.com/1260x840/?hair-salon,interior"
-                alt="Luxury Hair Salon Interior"
-                loading="lazy"
-                decoding="async"
-                className="w-full h-full object-cover grayscale-[20%] contrast-125"
+              <PixImg
+                query={"hair salon interior"}
+                srcOverride={'/assets/pexels-7195805.jpg'}
+                fallback={'/assets/pexels-7195805.jpg'}
+                alt={"Luxury Hair Salon Interior"}
+                className={
+                  "w-full h-full object-cover grayscale-[20%] contrast-125"
+                }
               />
             </div>
 
             {/* Secondary Portrait */}
             <div className="absolute bottom-0 left-0 w-[55%] md:w-[50%] h-[45%] md:h-[40%] z-20 border border-gold/20 p-1 bg-purple-base">
-              <img
-                src="https://source.unsplash.com/900x1200/?hair-model,portrait"
-                alt="Hair Model"
-                loading="lazy"
-                decoding="async"
-                className="w-full h-full object-cover"
+              <PixImg
+                query={"hair model portrait"}
+                srcOverride={'/assets/pexels-16974331.jpg'}
+                fallback={'/assets/pexels-16974331.jpg'}
+                alt={"Hair Model"}
+                className={"w-full h-full object-cover"}
               />
             </div>
 

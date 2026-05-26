@@ -1,34 +1,35 @@
 import React from "react";
 import { motion } from "framer-motion";
 import { Ornament } from "./DesignSystem";
+import PixImg from "./PixImg";
 const images = [
   {
-    src: "https://images.pexels.com/photos/3993316/pexels-photo-3993316.jpeg?auto=compress&cs=tinysrgb&w=800",
+    src: "/assets/pexels-16935956.jpg",
     alt: "Blonde balayage",
     aspect: "aspect-[3/4]",
   },
   {
-    src: "https://images.pexels.com/photos/3993131/pexels-photo-3993131.jpeg?auto=compress&cs=tinysrgb&w=800",
+    src: "/assets/pexels-7755238.jpg",
     alt: "Brunette styling",
     aspect: "aspect-[4/5]",
   },
   {
-    src: "https://images.pexels.com/photos/3997389/pexels-photo-3997389.jpeg?auto=compress&cs=tinysrgb&w=800",
+    src: "/assets/pexels-7755239.jpg",
     alt: "Precision cut",
     aspect: "aspect-square",
   },
   {
-    src: "https://images.pexels.com/photos/1755385/pexels-photo-1755385.jpeg?auto=compress&cs=tinysrgb&w=800",
+    src: "/assets/pexels-12285002.jpg",
     alt: "Bridal updo",
     aspect: "aspect-[4/3]",
   },
   {
-    src: "https://images.pexels.com/photos/2065200/pexels-photo-2065200.jpeg?auto=compress&cs=tinysrgb&w=800",
+    src: "/assets/pexels-19615202.jpg",
     alt: "Color transformation",
     aspect: "aspect-[3/4]",
   },
   {
-    src: "https://images.pexels.com/photos/1689731/pexels-photo-1689731.jpeg?auto=compress&cs=tinysrgb&w=800",
+    src: "/assets/pexels-7755518.jpg",
     alt: "Vibrant color",
     aspect: "aspect-square",
   },
@@ -92,11 +93,9 @@ export function Gallery() {
               }}
               className={`relative group overflow-hidden break-inside-avoid ${img.aspect}`}
             >
-              <img
-                src={img.src}
+              <PixImg
+                srcOverride={img.src}
                 alt={img.alt}
-                loading="lazy"
-                decoding="async"
                 className="w-full h-full object-cover transition-transform duration-1000 group-hover:scale-105"
               />
 

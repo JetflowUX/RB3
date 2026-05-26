@@ -2,26 +2,27 @@ import React from "react";
 import { motion } from "framer-motion";
 import { Instagram } from "lucide-react";
 import { Ornament, CornerBrackets } from "./DesignSystem";
+import PixImg from "./PixImg";
 const stylists = [
   {
     name: "Elena Vance",
     specialty: "Master Colorist & Balayage",
     image:
-      "https://images.pexels.com/photos/1689731/pexels-photo-1689731.jpeg?auto=compress&cs=tinysrgb&w=800",
+      "/assets/pexels-7755237.jpg",
     handle: "@elenadoeshair",
   },
   {
     name: "Marcus Chen",
     specialty: "Precision Cuts & Styling",
     image:
-      "https://images.pexels.com/photos/2182970/pexels-photo-2182970.jpeg?auto=compress&cs=tinysrgb&w=800",
+      "/assets/pexels-7755240.jpg",
     handle: "@marcus.cuts",
   },
   {
     name: "Sophia Laurent",
     specialty: "Extensions & Bridal",
     image:
-      "https://images.pexels.com/photos/1239291/pexels-photo-1239291.jpeg?auto=compress&cs=tinysrgb&w=800",
+      "/assets/pexels-12285002.jpg",
     handle: "@sophia.styles",
   },
 ];
@@ -79,14 +80,15 @@ export function Stylists() {
               <CornerBrackets />
 
               <div className="w-full h-full overflow-hidden relative bg-purple-surface">
-                <img
-                  src={stylist.image}
+                <PixImg
+                  query={stylist.name + " stylist portrait"}
+                  srcOverride={stylist.image}
                   alt={stylist.name}
                   className="w-full h-full object-cover transition-transform duration-1000 group-hover:scale-105 grayscale-[20%]"
                 />
 
                 {/* Gradient Overlay */}
-                <div className="absolute inset-0 bg-gradient-to-t from-purple-base via-purple-base/20 to-transparent opacity-90 group-hover:opacity-100 transition-opacity duration-500" />
+                <div className="absolute inset-0 bg-gradient-to-t from-purple-base via-purple-base/20 to-transparent opacity-60 group-hover:opacity-100 transition-opacity duration-500" />
 
                 {/* Outline Numeral */}
                 <div className="absolute top-4 left-4 text-6xl font-serif italic text-stroke-gold opacity-50">

@@ -10,6 +10,7 @@ import {
   ArrowRight,
 } from "lucide-react";
 import { Ornament } from "./DesignSystem";
+import PixImg from "./PixImg";
 const services = [
   {
     icon: Scissors,
@@ -17,7 +18,7 @@ const services = [
     description:
       "Tailored haircuts designed to complement your face shape, lifestyle, and personal aesthetic.",
     price: "From $85",
-    img: "https://images.pexels.com/photos/3993316/pexels-photo-3993316.jpeg?auto=compress&cs=tinysrgb&w=600",
+    img: "/assets/pexels-7755239.jpg",
   },
   {
     icon: Sparkles,
@@ -25,7 +26,7 @@ const services = [
     description:
       "Dimensional color, root touch-ups, and full transformations using premium, hair-safe products.",
     price: "From $120",
-    img: "https://images.pexels.com/photos/3997389/pexels-photo-3997389.jpeg?auto=compress&cs=tinysrgb&w=600",
+    img: "/assets/pexels-19615202.jpg",
   },
   {
     icon: Droplets,
@@ -33,7 +34,7 @@ const services = [
     description:
       "Hand-painted, sun-kissed highlights for a natural, low-maintenance grow-out.",
     price: "From $195",
-    img: "https://images.pexels.com/photos/3992874/pexels-photo-3992874.jpeg?auto=compress&cs=tinysrgb&w=600",
+    img: "/assets/pexels-16935956.jpg",
   },
   {
     icon: Wind,
@@ -41,7 +42,7 @@ const services = [
     description:
       "Signature bouncy blowouts and sleek styling for events, nights out, or just because.",
     price: "From $65",
-    img: "https://images.pexels.com/photos/3993131/pexels-photo-3993131.jpeg?auto=compress&cs=tinysrgb&w=600",
+    img: "/assets/pexels-7755518.jpg",
   },
   {
     icon: Heart,
@@ -49,7 +50,7 @@ const services = [
     description:
       "Deep conditioning, keratin, and scalp treatments to restore health and shine to your hair.",
     price: "From $45",
-    img: "https://images.pexels.com/photos/3997381/pexels-photo-3997381.jpeg?auto=compress&cs=tinysrgb&w=600",
+    img: "/assets/pexels-7195800.jpg",
   },
   {
     icon: Crown,
@@ -57,7 +58,7 @@ const services = [
     description:
       "Flawless, long-lasting hair styling for your most important days. In-salon or on-location.",
     price: "Consultation",
-    img: "https://images.pexels.com/photos/1755385/pexels-photo-1755385.jpeg?auto=compress&cs=tinysrgb&w=600",
+    img: "/assets/pexels-12285002.jpg",
   },
 ];
 
@@ -139,11 +140,10 @@ export function Services() {
               {/* Hover Image (Desktop) */}
               <div className="hidden lg:block col-span-3">
                 <div className="w-full h-16 overflow-hidden opacity-0 group-hover:opacity-100 transition-all duration-500 translate-x-4 group-hover:translate-x-0">
-                  <img
-                    src={service.img}
+                  <PixImg
+                    query={`${service.title} hair`}
+                    srcOverride={service.img}
                     alt={service.title}
-                    loading="lazy"
-                    decoding="async"
                     className="w-full h-full object-cover"
                   />
                 </div>
@@ -165,3 +165,5 @@ export function Services() {
     </section>
   );
 }
+
+// Service images use the shared PixImg component above.

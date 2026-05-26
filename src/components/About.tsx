@@ -1,6 +1,7 @@
 import React from "react";
 import { motion } from "framer-motion";
 import { CornerBrackets } from "./DesignSystem";
+import PixImg from "./PixImg";
 export function About() {
   return (
     <section id="about" className="py-32 relative z-10 overflow-hidden">
@@ -33,23 +34,24 @@ export function About() {
             {/* Primary Image */}
             <div className="absolute top-0 left-0 w-[75%] h-[75%] z-10">
               <CornerBrackets />
-              <img
-                src="https://images.pexels.com/photos/3992874/pexels-photo-3992874.jpeg?auto=compress&cs=tinysrgb&w=1260"
-                alt="Stylist working on client's hair"
-                loading="lazy"
-                decoding="async"
-                className="w-full h-full object-cover grayscale-[30%]"
+              {/** try pixabay first, fallback to Unsplash source */}
+              <PixImg
+                query={"stylist working"}
+                srcOverride={'/assets/pexels-7755226.jpg'}
+                fallback={'/assets/pexels-7755226.jpg'}
+                className={"w-full h-full object-cover grayscale-[30%]"}
+                alt={"Stylist working on client's hair"}
               />
             </div>
 
             {/* Secondary Image Overlapping */}
             <div className="absolute bottom-0 right-0 w-[55%] h-[45%] z-20 border border-gold/20 p-2 bg-purple-base">
-              <img
-                src="https://images.pexels.com/photos/3997381/pexels-photo-3997381.jpeg?auto=compress&cs=tinysrgb&w=1260"
-                alt="Hair detail"
-                loading="lazy"
-                decoding="async"
-                className="w-full h-full object-cover"
+              <PixImg
+                query={"hair detail texture"}
+                srcOverride={'/assets/pexels-10647102.jpg'}
+                fallback={'/assets/pexels-10647102.jpg'}
+                className={"w-full h-full object-cover"}
+                alt={"Hair detail"}
               />
             </div>
           </motion.div>
@@ -156,3 +158,5 @@ export function About() {
     </section>
   );
 }
+
+// Uses shared PixImg component from ./PixImg
