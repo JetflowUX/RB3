@@ -94,6 +94,8 @@ export function Stylists() {
                 <img
                 src={stylist.image}
                 alt={stylist.name}
+                loading="lazy"
+                decoding="async"
                 className="w-full h-full object-cover opacity-80 group-hover:opacity-100 group-hover:scale-105 transition-all duration-700 mix-blend-luminosity group-hover:mix-blend-normal" />
               
                 {/* Glass overlay on hover */}

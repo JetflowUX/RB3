@@ -27,6 +27,8 @@ export function About() {
               <img
                 src="https://images.unsplash.com/photo-1560066984-138dadb4c035?auto=format&fit=crop&w=1000&q=80"
                 alt="Luxurious dark salon interior"
+                loading="lazy"
+                decoding="async"
                 className="w-full h-full object-cover opacity-80" />
               
               <div className="absolute inset-0 bg-brand-purple-900/20 mix-blend-multiply"></div>
@@ -36,6 +38,8 @@ export function About() {
               <img
                 src="https://images.unsplash.com/photo-1622286342621-4bd786c2447c?auto=format&fit=crop&w=800&q=80"
                 alt="Premium salon chair"
+                loading="lazy"
+                decoding="async"
                 className="w-full h-full object-cover" />
               
             </div>

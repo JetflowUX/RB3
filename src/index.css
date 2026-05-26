@@ -11,6 +11,7 @@
 @layer base {
   html {
     scroll-behavior: smooth;
+    overflow-x: hidden;
   }
   body {
     @apply bg-brand-purple-900 text-brand-cream font-sans antialiased selection:bg-brand-gold-500/30 selection:text-brand-gold-300;

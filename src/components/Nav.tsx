@@ -74,10 +74,11 @@ export function Nav() {
               Book Now
             </a>
             <button
-              className="md:hidden text-brand-cream hover:text-brand-gold-400 transition-colors"
+              className="md:hidden text-brand-cream hover:text-brand-gold-400 transition-colors focus:outline-none focus:ring-2 focus:ring-brand-gold-400/30 rounded"
               onClick={() => setMobileMenuOpen(!mobileMenuOpen)}
-              aria-label="Toggle menu">
-              
+              aria-label="Toggle menu"
+              aria-expanded={mobileMenuOpen}
+              aria-controls="mobile-menu">
               {mobileMenuOpen ? <X size={24} /> : <Menu size={24} />}
             </button>
           </div>
@@ -103,6 +104,7 @@ export function Nav() {
           transition={{
             duration: 0.3
           }}
+          id="mobile-menu"
           className="absolute top-full left-6 right-6 mt-2 glass-panel bg-brand-purple-900/90 rounded-2xl overflow-hidden md:hidden">
           
             <div className="flex flex-col py-6 px-8 gap-6">
@@ -111,16 +113,14 @@ export function Nav() {
               key={link.name}
               href={link.href}
               onClick={() => setMobileMenuOpen(false)}
-              className="text-lg uppercase tracking-widest text-brand-cream hover:text-brand-gold-400 transition-colors border-b border-white/5 pb-4">
-              
+              className="text-lg uppercase tracking-widest text-brand-cream hover:text-brand-gold-400 transition-colors border-b border-white/5 pb-4 block w-full">
                   {link.name}
                 </a>
             )}
               <a
               href="#book"
               onClick={() => setMobileMenuOpen(false)}
-              className="inline-flex items-center justify-center px-6 py-3 text-sm uppercase tracking-widest font-medium text-brand-purple-900 bg-brand-gold-500 rounded-full mt-2">
-              
+              className="inline-flex w-full items-center justify-center px-6 py-3 text-sm uppercase tracking-widest font-medium text-brand-purple-900 bg-brand-gold-500 rounded-full mt-2">
                 Book Appointment
               </a>
             </div>

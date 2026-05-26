@@ -11,8 +11,9 @@ import { Footer } from './components/Footer';
 export function App() {
   return (
     <div className="min-h-screen bg-brand-purple-900 text-brand-cream selection:bg-brand-gold-500/30 selection:text-brand-gold-300">
+      <a href="#main-content" className="sr-only focus:not-sr-only p-4 bg-brand-gold-500/10 text-brand-cream rounded fixed top-4 left-4 z-[60]">Skip to content</a>
       <Nav />
-      <main>
+      <main id="main-content">
         <Hero />
         <About />
         <Services />

@@ -7,9 +7,9 @@ export function Hero() {
       id="home"
       className="relative min-h-screen flex items-center pt-24 pb-12 overflow-hidden">
       
-      {/* Background subtle glow */}
-      <div className="absolute top-1/4 -left-1/4 w-1/2 h-1/2 bg-brand-purple-700/30 rounded-full blur-[120px] pointer-events-none"></div>
-      <div className="absolute bottom-0 right-0 w-1/3 h-1/3 bg-brand-gold-900/10 rounded-full blur-[100px] pointer-events-none"></div>
+      {/* Background subtle glow (hidden on very small screens to avoid overflow) */}
+      <div className="hidden sm:block absolute top-1/4 -left-1/4 w-1/2 h-1/2 bg-brand-purple-700/30 rounded-full blur-[120px] pointer-events-none"></div>
+      <div className="hidden sm:block absolute bottom-0 right-0 w-1/3 h-1/3 bg-brand-gold-900/10 rounded-full blur-[100px] pointer-events-none"></div>
 
       <div className="max-w-7xl mx-auto px-6 lg:px-12 w-full relative z-10">
         <div className="grid grid-cols-1 lg:grid-cols-12 gap-12 lg:gap-8 items-center">
@@ -118,6 +118,8 @@ export function Hero() {
                 <img
                   src="https://images.unsplash.com/photo-1521590832167-7bcbfaa6381f?auto=format&fit=crop&w=1200&q=80"
                   alt="Barber styling hair in a moody salon"
+                  loading="lazy"
+                  decoding="async"
                   className="w-full h-full object-cover opacity-90 hover:opacity-100 transition-opacity duration-700 mix-blend-luminosity hover:mix-blend-normal" />
                 
                 <div className="absolute inset-0 bg-gradient-to-t from-brand-purple-900 via-transparent to-transparent opacity-60"></div>

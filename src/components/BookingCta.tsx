@@ -11,6 +11,8 @@ export function BookingCta() {
             <img
               src="https://images.unsplash.com/photo-1521590832167-7bcbfaa6381f?auto=format&fit=crop&w=1600&q=80"
               alt="Salon interior"
+              loading="lazy"
+              decoding="async"
               className="w-full h-full object-cover opacity-40 mix-blend-luminosity" />
             
             <div className="absolute inset-0 bg-gradient-to-r from-brand-purple-900/90 to-brand-purple-900/40"></div>

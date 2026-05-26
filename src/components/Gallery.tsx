@@ -84,6 +84,8 @@ export function Gallery() {
               <img
               src={img.src}
               alt={img.alt}
+              loading="lazy"
+              decoding="async"
               className="w-full h-full object-cover opacity-70 group-hover:opacity-100 transition-all duration-700 group-hover:scale-105" />
             
               <div className="absolute inset-0 bg-brand-purple-900/20 group-hover:bg-transparent transition-colors duration-500"></div>
