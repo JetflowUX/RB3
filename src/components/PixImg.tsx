@@ -14,7 +14,8 @@ export default function PixImg({
   alt?: string;
   className?: string;
 }) {
-  const src = srcOverride || usePexels(query, fallback);
+  const pexelsSrc = usePexels(query, fallback);
+  const src = srcOverride || pexelsSrc;
   return (
     <img
       src={src}

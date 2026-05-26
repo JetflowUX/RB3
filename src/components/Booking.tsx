@@ -1,5 +1,4 @@
 import React from "react";
-import { motion } from "framer-motion";
 import { MapPin, Phone, Clock, Calendar } from "lucide-react";
 export function Booking() {
   return (

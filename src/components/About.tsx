@@ -1,4 +1,3 @@
-import React from "react";
 import { motion } from "framer-motion";
 import { CornerBrackets } from "./DesignSystem";
 import PixImg from "./PixImg";
