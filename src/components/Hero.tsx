@@ -1,0 +1,153 @@
+import React from 'react';
+import { motion } from 'framer-motion';
+import { Star } from 'lucide-react';
+import { Ornament, CornerBrackets, GlassCard } from './DesignSystem';
+export function Hero() {
+  return (
+    <section className="relative min-h-screen flex items-center pt-28 pb-24 overflow-hidden">
+      {/* Dramatic Vignette Background */}
+      <div className="absolute inset-0 z-0 bg-purple-base">
+        <div className="absolute inset-0 bg-[radial-gradient(circle_at_center,rgba(212,175,55,0.08)_0%,rgba(21,10,36,1)_70%)]" />
+      </div>
+
+      {/* Vertical Label — pinned to viewport edge, won't shift layout */}
+      <div className="absolute left-4 top-1/2 -translate-y-1/2 -rotate-90 origin-center text-gold tracking-[0.3em] text-[10px] uppercase whitespace-nowrap hidden lg:block z-20">
+        EST. CHARLOTTE NC
+      </div>
+
+      <div className="relative z-10 max-w-7xl mx-auto px-6 lg:px-12 w-full">
+        <div className="grid lg:grid-cols-12 gap-10 lg:gap-12 items-center">
+          {/* Left: Editorial Typography */}
+          <motion.div
+            initial={{
+              opacity: 0,
+              y: 30
+            }}
+            animate={{
+              opacity: 1,
+              y: 0
+            }}
+            transition={{
+              duration: 0.8,
+              ease: 'easeOut'
+            }}
+            className="lg:col-span-7 relative">
+            
+            <div className="flex items-center gap-4 mb-8">
+              <Ornament className="w-4 h-4 text-gold animate-pulse-slow shrink-0" />
+              <div className="h-px w-12 bg-gold/40 shrink-0" />
+              <span className="text-xs font-medium tracking-widest uppercase text-gold-light">
+                Charlotte's Premier Salon
+              </span>
+            </div>
+
+            <h1 className="font-serif leading-[0.95] mb-10 relative z-10">
+              <span className="block text-4xl sm:text-5xl md:text-6xl font-normal mb-3 text-white/90">
+                We Cut the
+              </span>
+              <span className="block text-[4.5rem] sm:text-[6rem] md:text-[7.5rem] lg:text-[8.5rem] italic text-gradient-gold relative leading-none pb-4">
+                Best Hair
+                <svg
+                  className="absolute -bottom-1 md:bottom-0 left-0 w-3/4 h-3 text-gold/40"
+                  viewBox="0 0 100 20"
+                  preserveAspectRatio="none">
+                  
+                  <path
+                    d="M0,10 Q50,20 100,0"
+                    fill="none"
+                    stroke="currentColor"
+                    strokeWidth="2" />
+                  
+                </svg>
+              </span>
+              <span className="block text-3xl sm:text-4xl md:text-5xl font-normal mt-4 text-white/90">
+                in Charlotte.
+              </span>
+            </h1>
+
+            <p className="text-base md:text-lg text-white/70 mb-10 max-w-md font-light leading-relaxed border-l border-gold/20 pl-6">
+              Experience the Rock Boss standard. Precision cuts, masterful
+              color, and an editorial approach to everyday beauty.
+            </p>
+
+            <div className="flex flex-col sm:flex-row gap-4">
+              <a href="#booking" className="btn-primary">
+                Book Appointment
+              </a>
+              <a href="#services" className="btn-secondary">
+                View Services
+              </a>
+            </div>
+          </motion.div>
+
+          {/* Right: Image Collage */}
+          <motion.div
+            initial={{
+              opacity: 0,
+              scale: 0.95
+            }}
+            animate={{
+              opacity: 1,
+              scale: 1
+            }}
+            transition={{
+              duration: 0.8,
+              delay: 0.2,
+              ease: 'easeOut'
+            }}
+            className="lg:col-span-5 relative h-[520px] lg:h-[600px] hidden lg:block">
+            
+            {/* Primary Portrait */}
+            <div className="absolute top-0 right-0 w-[80%] h-[70%] z-10">
+              <CornerBrackets />
+              <img
+                src="https://images.pexels.com/photos/3993449/pexels-photo-3993449.jpeg?auto=compress&cs=tinysrgb&w=1260"
+                alt="Luxury Hair Salon Interior"
+                className="w-full h-full object-cover grayscale-[20%] contrast-125" />
+              
+            </div>
+
+            {/* Secondary Portrait */}
+            <div className="absolute bottom-0 left-0 w-[55%] h-[45%] z-20 border border-gold/20 p-1 bg-purple-base">
+              <img
+                src="https://images.pexels.com/photos/1813272/pexels-photo-1813272.jpeg?auto=compress&cs=tinysrgb&w=1260"
+                alt="Hair Model"
+                className="w-full h-full object-cover" />
+              
+            </div>
+
+            {/* Floating Review Card — positioned safely within column */}
+            <div className="absolute bottom-8 right-0 z-30 w-64">
+              <GlassCard className="p-5">
+                <CornerBrackets />
+                <div className="flex items-center justify-between mb-3 relative z-20">
+                  <div className="flex items-center gap-1">
+                    {[...Array(5)].map((_, i) =>
+                    <Star key={i} className="w-3 h-3 text-gold fill-gold" />
+                    )}
+                  </div>
+                  <Ornament className="w-4 h-4 text-gold/50" />
+                </div>
+                <p className="text-xs text-white/80 italic mb-3 relative z-20 leading-relaxed">
+                  "Absolutely transformed my look. The attention to detail at
+                  RB3 is unmatched in Charlotte."
+                </p>
+                <div className="text-[10px] font-medium text-gold uppercase tracking-widest relative z-20">
+                  — Sarah M.
+                </div>
+              </GlassCard>
+            </div>
+          </motion.div>
+        </div>
+      </div>
+
+      {/* Scroll Indicator — pinned to bottom, won't overlap content */}
+      <div className="absolute bottom-6 left-1/2 -translate-x-1/2 flex flex-col items-center gap-3 z-20 hidden md:flex">
+        <span className="text-[10px] uppercase tracking-[0.3em] text-gold/60">
+          Scroll
+        </span>
+        <div className="w-px h-10 bg-gradient-to-b from-gold/60 to-transparent" />
+      </div>
+    </section>);
+
+}
