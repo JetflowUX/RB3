@@ -128,11 +128,11 @@ export function Hero() {
                   </div>
                   <Ornament className="w-4 h-4 text-gold/50" />
                 </div>
-                <p className="text-xs text-white/80 italic mb-3 relative z-20 leading-relaxed">
+                <p className="text-xs text-white/80 italic mb-3 relative z-20 leading-relaxed text-center">
                   "Absolutely transformed my look. The attention to detail at
                   RB3 is unmatched in Charlotte."
                 </p>
-                <div className="text-[10px] font-medium text-gold uppercase tracking-widest relative z-20">
+                <div className="text-[10px] font-medium text-gold uppercase tracking-widest relative z-20 text-center">
                   — Sarah M.
                 </div>
               </GlassCard>
