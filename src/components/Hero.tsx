@@ -98,7 +98,7 @@ export function Hero() {
             <div className="absolute top-0 right-0 w-[80%] md:w-[85%] h-[70%] md:h-[60%] z-10">
               <CornerBrackets />
               <img
-                src="https://images.pexels.com/photos/3993449/pexels-photo-3993449.jpeg?auto=compress&cs=tinysrgb&w=1260"
+                src="https://source.unsplash.com/1260x840/?hair-salon,interior"
                 alt="Luxury Hair Salon Interior"
                 loading="lazy"
                 decoding="async"
@@ -109,7 +109,7 @@ export function Hero() {
             {/* Secondary Portrait */}
             <div className="absolute bottom-0 left-0 w-[55%] md:w-[50%] h-[45%] md:h-[40%] z-20 border border-gold/20 p-1 bg-purple-base">
               <img
-                src="https://images.pexels.com/photos/1813272/pexels-photo-1813272.jpeg?auto=compress&cs=tinysrgb&w=1260"
+                src="https://source.unsplash.com/900x1200/?hair-model,portrait"
                 alt="Hair Model"
                 loading="lazy"
                 decoding="async"
