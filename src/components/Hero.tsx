@@ -10,10 +10,7 @@ export function Hero() {
         <div className="absolute inset-0 bg-[radial-gradient(circle_at_center,rgba(212,175,55,0.08)_0%,rgba(21,10,36,1)_70%)]" />
       </div>
 
-      {/* Vertical Label — pinned to viewport edge, won't shift layout */}
-      <div className="absolute left-4 top-1/2 -translate-y-1/2 -rotate-90 origin-center text-gold tracking-[0.3em] text-[10px] uppercase whitespace-nowrap hidden lg:block z-20">
-        EST. CHARLOTTE NC
-      </div>
+      {/* Vertical Label removed per request */}
 
       <div className="relative z-10 max-w-7xl mx-auto px-6 lg:px-12 w-full">
         <div className="grid lg:grid-cols-12 gap-10 lg:gap-12 items-center">
@@ -103,6 +100,8 @@ export function Hero() {
               <img
                 src="https://images.pexels.com/photos/3993449/pexels-photo-3993449.jpeg?auto=compress&cs=tinysrgb&w=1260"
                 alt="Luxury Hair Salon Interior"
+                loading="lazy"
+                decoding="async"
                 className="w-full h-full object-cover grayscale-[20%] contrast-125"
               />
             </div>
@@ -112,6 +111,8 @@ export function Hero() {
               <img
                 src="https://images.pexels.com/photos/1813272/pexels-photo-1813272.jpeg?auto=compress&cs=tinysrgb&w=1260"
                 alt="Hair Model"
+                loading="lazy"
+                decoding="async"
                 className="w-full h-full object-cover"
               />
             </div>

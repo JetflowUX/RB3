@@ -82,7 +82,7 @@ export function Testimonials() {
         >
           <TestimonialCard featured>
             {/* Decorative Watermark Quote Mark */}
-            <div className="hidden sm:block absolute top-2 left-6 md:top-4 md:left-10 text-[5rem] md:text-[9rem] lg:text-[12rem] font-serif italic text-gold/[0.07] leading-none pointer-events-none select-none">
+            <div className="hidden sm:block absolute top-2 left-6 md:top-4 md:left-10 text-[5rem] md:text-[9rem] lg:text-[12rem] font-serif italic text-gold/[0.07] leading-none pointer-events-none select-none -z-10">
               "
             </div>
 

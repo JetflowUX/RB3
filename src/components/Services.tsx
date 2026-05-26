@@ -115,7 +115,7 @@ export function Services() {
               className="group relative grid grid-cols-12 gap-4 md:gap-6 py-8 md:py-10 border-b border-gold/10 hover:border-gold/40 transition-colors cursor-pointer items-center overflow-hidden"
             >
               {/* Giant Outline Numeral */}
-              <div className="absolute right-[-1rem] top-1/2 -translate-y-1/2 text-[3.5rem] md:text-[7rem] lg:text-[10rem] font-serif italic text-stroke-gold group-hover:text-stroke-gold-hover transition-all duration-500 pointer-events-none -z-10 leading-none select-none">
+              <div className="hidden md:block absolute right-[-1rem] top-1/2 -translate-y-1/2 text-[3.5rem] md:text-[7rem] lg:text-[10rem] font-serif italic text-stroke-gold group-hover:text-stroke-gold-hover transition-all duration-500 pointer-events-none -z-10 leading-none select-none">
                 0{index + 1}
               </div>
 
@@ -142,6 +142,8 @@ export function Services() {
                   <img
                     src={service.img}
                     alt={service.title}
+                    loading="lazy"
+                    decoding="async"
                     className="w-full h-full object-cover"
                   />
                 </div>

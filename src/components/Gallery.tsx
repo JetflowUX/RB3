@@ -38,6 +38,7 @@ export function Gallery() {
   return (
     <section
       id="gallery"
+      aria-label="Gallery"
       className="py-32 relative z-10 bg-purple-surface/20 border-y border-gold/5"
     >
       <div className="max-w-7xl mx-auto px-6 lg:px-8">
@@ -94,6 +95,8 @@ export function Gallery() {
               <img
                 src={img.src}
                 alt={img.alt}
+                loading="lazy"
+                decoding="async"
                 className="w-full h-full object-cover transition-transform duration-1000 group-hover:scale-105"
               />
 

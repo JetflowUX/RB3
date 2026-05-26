@@ -4,8 +4,8 @@ import { CornerBrackets } from "./DesignSystem";
 export function About() {
   return (
     <section id="about" className="py-32 relative z-10 overflow-hidden">
-      {/* Giant Watermark — sized down and clipped properly */}
-      <div className="absolute right-0 top-1/2 -translate-y-1/2 hidden sm:block text-[4.5rem] md:text-[10rem] lg:text-[20rem] font-serif italic text-stroke-gold pointer-events-none -z-10 leading-none select-none translate-x-1/4">
+      {/* Giant Watermark — show only on large screens and keep behind content */}
+      <div className="absolute right-8 top-1/2 -translate-y-1/2 hidden lg:block text-[8rem] lg:text-[18rem] font-serif italic text-stroke-gold pointer-events-none -z-10 leading-none select-none">
         3
       </div>
 
@@ -36,6 +36,8 @@ export function About() {
               <img
                 src="https://images.pexels.com/photos/3992874/pexels-photo-3992874.jpeg?auto=compress&cs=tinysrgb&w=1260"
                 alt="Stylist working on client's hair"
+                loading="lazy"
+                decoding="async"
                 className="w-full h-full object-cover grayscale-[30%]"
               />
             </div>
@@ -45,6 +47,8 @@ export function About() {
               <img
                 src="https://images.pexels.com/photos/3997381/pexels-photo-3997381.jpeg?auto=compress&cs=tinysrgb&w=1260"
                 alt="Hair detail"
+                loading="lazy"
+                decoding="async"
                 className="w-full h-full object-cover"
               />
             </div>
