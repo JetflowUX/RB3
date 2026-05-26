@@ -102,8 +102,8 @@ export function Hero() {
               <CornerBrackets />
               <PixImg
                 query={"hair salon interior"}
-                srcOverride={'/assets/pexels-7195805.jpg'}
-                fallback={'/assets/pexels-7195805.jpg'}
+                srcOverride={"/assets/pexels-7195805.jpg"}
+                fallback={"/assets/pexels-7195805.jpg"}
                 alt={"Luxury Hair Salon Interior"}
                 className={
                   "w-full h-full object-cover grayscale-[20%] contrast-125"
@@ -115,8 +115,8 @@ export function Hero() {
             <div className="absolute bottom-0 left-0 w-[55%] md:w-[50%] h-[45%] md:h-[40%] z-20 border border-gold/20 p-1 bg-purple-base">
               <PixImg
                 query={"hair model portrait"}
-                srcOverride={'/assets/pexels-16974331.jpg'}
-                fallback={'/assets/pexels-16974331.jpg'}
+                srcOverride={"/assets/pexels-16974331.jpg"}
+                fallback={"/assets/pexels-16974331.jpg"}
                 alt={"Hair Model"}
                 className={"w-full h-full object-cover"}
               />

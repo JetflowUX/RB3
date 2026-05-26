@@ -37,8 +37,8 @@ export function About() {
               {/** try pixabay first, fallback to Unsplash source */}
               <PixImg
                 query={"stylist working"}
-                srcOverride={'/assets/pexels-7755226.jpg'}
-                fallback={'/assets/pexels-7755226.jpg'}
+                srcOverride={"/assets/pexels-7755226.jpg"}
+                fallback={"/assets/pexels-7755226.jpg"}
                 className={"w-full h-full object-cover grayscale-[30%]"}
                 alt={"Stylist working on client's hair"}
               />
@@ -48,8 +48,8 @@ export function About() {
             <div className="absolute bottom-0 right-0 w-[55%] h-[45%] z-20 border border-gold/20 p-2 bg-purple-base">
               <PixImg
                 query={"hair detail texture"}
-                srcOverride={'/assets/pexels-10647102.jpg'}
-                fallback={'/assets/pexels-10647102.jpg'}
+                srcOverride={"/assets/pexels-10647102.jpg"}
+                fallback={"/assets/pexels-10647102.jpg"}
                 className={"w-full h-full object-cover"}
                 alt={"Hair detail"}
               />

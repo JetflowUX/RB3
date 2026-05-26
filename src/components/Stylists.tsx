@@ -7,22 +7,19 @@ const stylists = [
   {
     name: "Elena Vance",
     specialty: "Master Colorist & Balayage",
-    image:
-      "/assets/pexels-7755237.jpg",
+    image: "/assets/pexels-7755237.jpg",
     handle: "@elenadoeshair",
   },
   {
     name: "Marcus Chen",
     specialty: "Precision Cuts & Styling",
-    image:
-      "/assets/pexels-7755240.jpg",
+    image: "/assets/pexels-7755240.jpg",
     handle: "@marcus.cuts",
   },
   {
     name: "Sophia Laurent",
     specialty: "Extensions & Bridal",
-    image:
-      "/assets/pexels-12285002.jpg",
+    image: "/assets/pexels-12285002.jpg",
     handle: "@sophia.styles",
   },
 ];
