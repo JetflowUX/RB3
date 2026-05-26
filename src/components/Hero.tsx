@@ -1,10 +1,10 @@
-import React from "react";
-import { motion } from "framer-motion";
-import { Star } from "lucide-react";
-import { Ornament, CornerBrackets, GlassCard } from "./DesignSystem";
+import React from 'react';
+import { motion } from 'framer-motion';
+import { Star } from 'lucide-react';
+import { Ornament, CornerBrackets, GlassCard } from './DesignSystem';
 export function Hero() {
   return (
-    <section className="relative min-h-screen flex items-center pt-24 sm:pt-28 pb-20 sm:pb-24 overflow-hidden">
+    <section className="relative min-h-screen flex items-center pt-28 pb-24 overflow-hidden">
       {/* Dramatic Vignette Background */}
       <div className="absolute inset-0 z-0 bg-purple-base">
         <div className="absolute inset-0 bg-[radial-gradient(circle_at_center,rgba(212,175,55,0.08)_0%,rgba(21,10,36,1)_70%)]" />
@@ -15,24 +15,24 @@ export function Hero() {
         EST. CHARLOTTE NC
       </div>
 
-      <div className="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 lg:px-12 w-full">
-        <div className="grid lg:grid-cols-12 gap-8 sm:gap-10 lg:gap-12 items-center">
+      <div className="relative z-10 max-w-7xl mx-auto px-6 lg:px-12 w-full">
+        <div className="grid lg:grid-cols-12 gap-10 lg:gap-12 items-center">
           {/* Left: Editorial Typography */}
           <motion.div
             initial={{
               opacity: 0,
-              y: 30,
+              y: 30
             }}
             animate={{
               opacity: 1,
-              y: 0,
+              y: 0
             }}
             transition={{
               duration: 0.8,
-              ease: "easeOut",
+              ease: 'easeOut'
             }}
-            className="lg:col-span-7 relative"
-          >
+            className="lg:col-span-7 relative">
+            
             <div className="flex items-center gap-4 mb-8">
               <Ornament className="w-4 h-4 text-gold animate-pulse-slow shrink-0" />
               <div className="h-px w-12 bg-gold/40 shrink-0" />
@@ -41,36 +41,36 @@ export function Hero() {
               </span>
             </div>
 
-            <h1 className="font-serif leading-[0.95] mb-8 sm:mb-10 relative z-10">
-              <span className="block text-3xl sm:text-5xl md:text-6xl font-normal mb-3 text-white/90">
+            <h1 className="font-serif leading-[0.95] mb-10 relative z-10">
+              <span className="block text-3xl sm:text-4xl md:text-5xl font-normal mb-3 text-white/90">
                 We Cut the
               </span>
-              <span className="block text-[3.25rem] sm:text-[4.5rem] md:text-[6rem] lg:text-[8.5rem] italic text-gradient-gold relative leading-none pb-4">
+              <span className="block text-4xl sm:text-5xl md:text-[6.5rem] lg:text-[8.5rem] italic text-gradient-gold relative leading-none pb-4">
                 Best Hair
                 <svg
                   className="absolute -bottom-1 md:bottom-0 left-0 w-3/4 h-3 text-gold/40"
                   viewBox="0 0 100 20"
-                  preserveAspectRatio="none"
-                >
+                  preserveAspectRatio="none">
+                  
                   <path
                     d="M0,10 Q50,20 100,0"
                     fill="none"
                     stroke="currentColor"
-                    strokeWidth="2"
-                  />
+                    strokeWidth="2" />
+                  
                 </svg>
               </span>
-              <span className="block text-2xl sm:text-3xl md:text-5xl font-normal mt-4 text-white/90">
+              <span className="block text-xl sm:text-2xl md:text-3xl font-normal mt-4 text-white/90">
                 in Charlotte.
               </span>
             </h1>
 
-            <p className="text-base md:text-lg text-white/70 mb-8 sm:mb-10 max-w-lg font-light leading-relaxed border-l border-gold/20 pl-4 sm:pl-6">
+            <p className="text-base md:text-lg text-white/70 mb-10 max-w-md font-light leading-relaxed border-l border-gold/20 pl-6">
               Experience the Rock Boss standard. Precision cuts, masterful
               color, and an editorial approach to everyday beauty.
             </p>
 
-            <div className="flex flex-col sm:flex-row gap-4 max-w-md">
+            <div className="flex flex-col sm:flex-row gap-4">
               <a href="#booking" className="btn-primary">
                 Book Appointment
               </a>
@@ -84,36 +84,36 @@ export function Hero() {
           <motion.div
             initial={{
               opacity: 0,
-              scale: 0.95,
+              scale: 0.95
             }}
             animate={{
               opacity: 1,
-              scale: 1,
+              scale: 1
             }}
             transition={{
               duration: 0.8,
               delay: 0.2,
-              ease: "easeOut",
+              ease: 'easeOut'
             }}
-            className="lg:col-span-5 relative h-[520px] lg:h-[600px] hidden lg:block"
-          >
+            className="lg:col-span-5 relative h-64 md:h-[420px] lg:h-[600px] hidden md:block">
+            
             {/* Primary Portrait */}
-            <div className="absolute top-0 right-0 w-[80%] h-[70%] z-10">
+            <div className="absolute top-0 right-0 w-[80%] md:w-[85%] h-[70%] md:h-[60%] z-10">
               <CornerBrackets />
               <img
                 src="https://images.pexels.com/photos/3993449/pexels-photo-3993449.jpeg?auto=compress&cs=tinysrgb&w=1260"
                 alt="Luxury Hair Salon Interior"
-                className="w-full h-full object-cover grayscale-[20%] contrast-125"
-              />
+                className="w-full h-full object-cover grayscale-[20%] contrast-125" />
+              
             </div>
 
             {/* Secondary Portrait */}
-            <div className="absolute bottom-0 left-0 w-[55%] h-[45%] z-20 border border-gold/20 p-1 bg-purple-base">
+            <div className="absolute bottom-0 left-0 w-[55%] md:w-[50%] h-[45%] md:h-[40%] z-20 border border-gold/20 p-1 bg-purple-base">
               <img
                 src="https://images.pexels.com/photos/1813272/pexels-photo-1813272.jpeg?auto=compress&cs=tinysrgb&w=1260"
                 alt="Hair Model"
-                className="w-full h-full object-cover"
-              />
+                className="w-full h-full object-cover" />
+              
             </div>
 
             {/* Floating Review Card — positioned safely within column */}
@@ -122,9 +122,9 @@ export function Hero() {
                 <CornerBrackets />
                 <div className="flex items-center justify-between mb-3 relative z-20">
                   <div className="flex items-center gap-1">
-                    {[...Array(5)].map((_, i) => (
-                      <Star key={i} className="w-3 h-3 text-gold fill-gold" />
-                    ))}
+                    {[...Array(5)].map((_, i) =>
+                    <Star key={i} className="w-3 h-3 text-gold fill-gold" />
+                    )}
                   </div>
                   <Ornament className="w-4 h-4 text-gold/50" />
                 </div>
@@ -148,6 +148,6 @@ export function Hero() {
         </span>
         <div className="w-px h-10 bg-gradient-to-b from-gold/60 to-transparent" />
       </div>
-    </section>
-  );
+    </section>);
+
 }
