@@ -120,13 +120,13 @@ export function Hero() {
             <div className="absolute bottom-8 right-0 z-30 w-64">
               <GlassCard className="p-5">
                 <CornerBrackets />
-                <div className="flex items-center justify-between mb-3 relative z-20">
-                  <div className="flex items-center gap-1">
+                <div className="relative mb-3 z-20">
+                  <div className="flex items-center justify-center gap-1">
                     {[...Array(5)].map((_, i) => (
                       <Star key={i} className="w-3 h-3 text-gold fill-gold" />
                     ))}
                   </div>
-                  <Ornament className="w-4 h-4 text-gold/50" />
+                  <Ornament className="w-4 h-4 text-gold/50 absolute right-0 top-0" />
                 </div>
                 <p className="text-xs text-white/80 italic mb-3 relative z-20 leading-relaxed text-center">
                   "Absolutely transformed my look. The attention to detail at
