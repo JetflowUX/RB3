@@ -63,12 +63,23 @@
     writing-mode: vertical-rl;
   }
   .text-stroke-gold {
-    -webkit-text-stroke: 1px rgba(212, 175, 55, 0.2);
-    color: transparent;
+    -webkit-text-stroke: 1px rgba(212, 175, 55, 0.45);
+    /* provide a subtle fill fallback so text remains visible on noisy backgrounds */
+    color: rgba(232, 199, 106, 0.12);
+    -webkit-text-fill-color: rgba(232, 199, 106, 0.12);
   }
   .text-stroke-gold-hover {
-    -webkit-text-stroke: 1px rgba(212, 175, 55, 0.5);
-    color: transparent;
+    -webkit-text-stroke: 1px rgba(212, 175, 55, 0.8);
+    color: rgba(232, 199, 106, 0.16);
+    -webkit-text-fill-color: rgba(232, 199, 106, 0.16);
+  }
+  /* On small screens use a solid gold fill for maximum legibility */
+  @media (max-width: 640px) {
+    .text-stroke-gold {
+      color: rgb(232 199 106 / 1);
+      -webkit-text-fill-color: rgb(232 199 106 / 1);
+      -webkit-text-stroke: 0px rgba(212,175,55,0);
+    }
   }
   .noise-overlay {
     background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 200 200' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noiseFilter'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.65' numOctaves='3' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23noiseFilter)'/%3E%3C/svg%3E");
