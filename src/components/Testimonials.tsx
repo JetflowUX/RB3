@@ -1,46 +1,47 @@
-import React from 'react';
-import { motion } from 'framer-motion';
-import { Star } from 'lucide-react';
-import { Ornament } from './DesignSystem';
+import React from "react";
+import { motion } from "framer-motion";
+import { Star } from "lucide-react";
+import { Ornament } from "./DesignSystem";
 const reviews = [
-{
-  name: 'Jessica T.',
-  text: "I've been to many salons in Charlotte, but RB3 is on another level. The attention to detail and the luxurious atmosphere make every visit a treat. My balayage has never looked better.",
-  service: 'Balayage & Cut'
-},
-{
-  name: 'Amanda R.',
-  text: "The 'Rock Boss' mentality is real! I walked out feeling like a million bucks. The stylists truly listen to what you want and execute it flawlessly. Highly recommend.",
-  service: 'Color Transformation'
-},
-{
-  name: 'Michelle K.',
-  text: "Found my forever salon. The glass of champagne upon arrival, the thorough consultation, and the incredible blowout... it's the ultimate pampering experience.",
-  service: 'Signature Blowout'
-}];
+  {
+    name: "Jessica T.",
+    text: "I've been to many salons in Charlotte, but RB3 is on another level. The attention to detail and the luxurious atmosphere make every visit a treat. My balayage has never looked better.",
+    service: "Balayage & Cut",
+  },
+  {
+    name: "Amanda R.",
+    text: "The 'Rock Boss' mentality is real! I walked out feeling like a million bucks. The stylists truly listen to what you want and execute it flawlessly. Highly recommend.",
+    service: "Color Transformation",
+  },
+  {
+    name: "Michelle K.",
+    text: "Found my forever salon. The glass of champagne upon arrival, the thorough consultation, and the incredible blowout... it's the ultimate pampering experience.",
+    service: "Signature Blowout",
+  },
+];
 
 // Local Glass wrapper with proper inner padding behavior
 function TestimonialCard({
   children,
-  className = '',
-  featured = false
-
-
-
-
-}: {children: React.ReactNode;className?: string;featured?: boolean;}) {
+  className = "",
+  featured = false,
+}: {
+  children: React.ReactNode;
+  className?: string;
+  featured?: boolean;
+}) {
   return (
     <div
-      className={`relative rounded-2xl p-[1px] bg-gradient-to-br from-gold/40 via-transparent to-gold/10 h-full ${className}`}>
-      
+      className={`relative rounded-2xl p-[1px] bg-gradient-to-br from-gold/40 via-transparent to-gold/10 h-full ${className}`}
+    >
       <div className="absolute top-0 left-0 right-0 h-px bg-gradient-to-r from-transparent via-white/20 to-transparent z-20 pointer-events-none" />
       <div
-        className={`h-full w-full rounded-2xl bg-purple-surface/40 backdrop-blur-2xl overflow-hidden relative shadow-[inset_0_1px_0_0_rgba(255,255,255,0.08)] ${featured ? 'p-10 md:p-16' : 'p-8 md:p-10'}`}>
-        
+        className={`h-full w-full rounded-2xl bg-purple-surface/40 backdrop-blur-2xl overflow-hidden relative shadow-[inset_0_1px_0_0_rgba(255,255,255,0.08)] ${featured ? "p-10 md:p-16" : "p-8 md:p-10"}`}
+      >
         {children}
       </div>
-    </div>);
-
+    </div>
+  );
 }
 export function Testimonials() {
   return (
@@ -55,7 +56,7 @@ export function Testimonials() {
             </h2>
             <div className="h-px w-12 bg-gold/40" />
           </div>
-          <h3 className="text-4xl md:text-5xl lg:text-6xl font-serif font-bold">
+          <h3 className="text-3xl md:text-5xl lg:text-6xl font-serif font-bold">
             Word on the Street
           </h3>
         </div>
@@ -64,33 +65,33 @@ export function Testimonials() {
         <motion.div
           initial={{
             opacity: 0,
-            y: 20
+            y: 20,
           }}
           whileInView={{
             opacity: 1,
-            y: 0
+            y: 0,
           }}
           viewport={{
             once: true,
-            margin: '-50px'
+            margin: "-50px",
           }}
           transition={{
-            duration: 0.6
+            duration: 0.6,
           }}
-          className="mb-8">
-          
+          className="mb-8"
+        >
           <TestimonialCard featured>
             {/* Decorative Watermark Quote Mark */}
-            <div className="absolute top-2 left-6 md:top-4 md:left-10 text-[10rem] md:text-[14rem] font-serif italic text-gold/[0.07] leading-none pointer-events-none select-none">
+            <div className="hidden sm:block absolute top-2 left-6 md:top-4 md:left-10 text-[5rem] md:text-[9rem] lg:text-[12rem] font-serif italic text-gold/[0.07] leading-none pointer-events-none select-none">
               "
             </div>
 
             <div className="relative z-10 flex flex-col items-center text-center max-w-4xl mx-auto">
               {/* Stars */}
               <div className="flex gap-1 mb-8">
-                {[...Array(5)].map((_, i) =>
-                <Star key={i} className="w-5 h-5 text-gold fill-gold" />
-                )}
+                {[...Array(5)].map((_, i) => (
+                  <Star key={i} className="w-5 h-5 text-gold fill-gold" />
+                ))}
               </div>
 
               {/* Quote */}
@@ -118,33 +119,33 @@ export function Testimonials() {
 
         {/* Supporting Testimonials — equal 2-column grid */}
         <div className="grid md:grid-cols-2 gap-8">
-          {reviews.slice(1).map((review, index) =>
-          <motion.div
-            key={index}
-            initial={{
-              opacity: 0,
-              y: 20
-            }}
-            whileInView={{
-              opacity: 1,
-              y: 0
-            }}
-            viewport={{
-              once: true,
-              margin: '-50px'
-            }}
-            transition={{
-              duration: 0.6,
-              delay: 0.15 + index * 0.15
-            }}>
-            
+          {reviews.slice(1).map((review, index) => (
+            <motion.div
+              key={index}
+              initial={{
+                opacity: 0,
+                y: 20,
+              }}
+              whileInView={{
+                opacity: 1,
+                y: 0,
+              }}
+              viewport={{
+                once: true,
+                margin: "-50px",
+              }}
+              transition={{
+                duration: 0.6,
+                delay: 0.15 + index * 0.15,
+              }}
+            >
               <TestimonialCard>
                 <div className="flex flex-col h-full relative z-10">
                   {/* Stars */}
                   <div className="flex gap-1 mb-6">
-                    {[...Array(5)].map((_, i) =>
-                  <Star key={i} className="w-4 h-4 text-gold fill-gold" />
-                  )}
+                    {[...Array(5)].map((_, i) => (
+                      <Star key={i} className="w-4 h-4 text-gold fill-gold" />
+                    ))}
                   </div>
 
                   {/* Quote */}
@@ -167,9 +168,9 @@ export function Testimonials() {
                 </div>
               </TestimonialCard>
             </motion.div>
-          )}
+          ))}
         </div>
       </div>
-    </section>);
-
+    </section>
+  );
 }

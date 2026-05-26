@@ -1,7 +1,7 @@
-import React from 'react';
-import { motion } from 'framer-motion';
-import { Star } from 'lucide-react';
-import { Ornament, CornerBrackets, GlassCard } from './DesignSystem';
+import React from "react";
+import { motion } from "framer-motion";
+import { Star } from "lucide-react";
+import { Ornament, CornerBrackets, GlassCard } from "./DesignSystem";
 export function Hero() {
   return (
     <section className="relative min-h-screen flex items-center pt-28 pb-24 overflow-hidden">
@@ -21,18 +21,18 @@ export function Hero() {
           <motion.div
             initial={{
               opacity: 0,
-              y: 30
+              y: 30,
             }}
             animate={{
               opacity: 1,
-              y: 0
+              y: 0,
             }}
             transition={{
               duration: 0.8,
-              ease: 'easeOut'
+              ease: "easeOut",
             }}
-            className="lg:col-span-7 relative">
-            
+            className="lg:col-span-7 relative"
+          >
             <div className="flex items-center gap-4 mb-8">
               <Ornament className="w-4 h-4 text-gold animate-pulse-slow shrink-0" />
               <div className="h-px w-12 bg-gold/40 shrink-0" />
@@ -50,14 +50,14 @@ export function Hero() {
                 <svg
                   className="absolute -bottom-1 md:bottom-0 left-0 w-3/4 h-3 text-gold/40"
                   viewBox="0 0 100 20"
-                  preserveAspectRatio="none">
-                  
+                  preserveAspectRatio="none"
+                >
                   <path
                     d="M0,10 Q50,20 100,0"
                     fill="none"
                     stroke="currentColor"
-                    strokeWidth="2" />
-                  
+                    strokeWidth="2"
+                  />
                 </svg>
               </span>
               <span className="block text-xl sm:text-2xl md:text-3xl font-normal mt-4 text-white/90">
@@ -84,27 +84,27 @@ export function Hero() {
           <motion.div
             initial={{
               opacity: 0,
-              scale: 0.95
+              scale: 0.95,
             }}
             animate={{
               opacity: 1,
-              scale: 1
+              scale: 1,
             }}
             transition={{
               duration: 0.8,
               delay: 0.2,
-              ease: 'easeOut'
+              ease: "easeOut",
             }}
-            className="lg:col-span-5 relative h-64 md:h-[420px] lg:h-[600px] hidden md:block">
-            
+            className="lg:col-span-5 relative h-64 md:h-[420px] lg:h-[600px] hidden md:block"
+          >
             {/* Primary Portrait */}
             <div className="absolute top-0 right-0 w-[80%] md:w-[85%] h-[70%] md:h-[60%] z-10">
               <CornerBrackets />
               <img
                 src="https://images.pexels.com/photos/3993449/pexels-photo-3993449.jpeg?auto=compress&cs=tinysrgb&w=1260"
                 alt="Luxury Hair Salon Interior"
-                className="w-full h-full object-cover grayscale-[20%] contrast-125" />
-              
+                className="w-full h-full object-cover grayscale-[20%] contrast-125"
+              />
             </div>
 
             {/* Secondary Portrait */}
@@ -112,8 +112,8 @@ export function Hero() {
               <img
                 src="https://images.pexels.com/photos/1813272/pexels-photo-1813272.jpeg?auto=compress&cs=tinysrgb&w=1260"
                 alt="Hair Model"
-                className="w-full h-full object-cover" />
-              
+                className="w-full h-full object-cover"
+              />
             </div>
 
             {/* Floating Review Card — positioned safely within column */}
@@ -122,9 +122,9 @@ export function Hero() {
                 <CornerBrackets />
                 <div className="flex items-center justify-between mb-3 relative z-20">
                   <div className="flex items-center gap-1">
-                    {[...Array(5)].map((_, i) =>
-                    <Star key={i} className="w-3 h-3 text-gold fill-gold" />
-                    )}
+                    {[...Array(5)].map((_, i) => (
+                      <Star key={i} className="w-3 h-3 text-gold fill-gold" />
+                    ))}
                   </div>
                   <Ornament className="w-4 h-4 text-gold/50" />
                 </div>
@@ -142,12 +142,12 @@ export function Hero() {
       </div>
 
       {/* Scroll Indicator — pinned to bottom, won't overlap content */}
-      <div className="absolute bottom-6 left-1/2 -translate-x-1/2 flex flex-col items-center gap-3 z-20 hidden md:flex">
+      <div className="hidden md:flex md:flex-col absolute bottom-6 left-1/2 -translate-x-1/2 items-center gap-3 z-20">
         <span className="text-[10px] uppercase tracking-[0.3em] text-gold/60">
           Scroll
         </span>
         <div className="w-px h-10 bg-gradient-to-b from-gold/60 to-transparent" />
       </div>
-    </section>);
-
+    </section>
+  );
 }

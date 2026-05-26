@@ -1,15 +1,12 @@
-import React from 'react';
-import { Scissors, Instagram, Facebook, Twitter } from 'lucide-react';
+import React from "react";
+import { Scissors, Instagram, Facebook, Twitter } from "lucide-react";
 export function Footer() {
   return (
     <footer className="bg-purple-base border-t border-white/5 pt-16 pb-8 relative z-10">
       <div className="max-w-7xl mx-auto px-6 lg:px-8">
         <div className="grid grid-cols-1 md:grid-cols-4 gap-12 mb-12">
           <div className="md:col-span-2">
-            <a
-              href="#"
-              className="flex items-center gap-2 group mb-6 inline-flex">
-              
+            <a href="#" className="inline-flex items-center gap-2 group mb-6">
               <Scissors className="w-6 h-6 text-gold group-hover:rotate-12 transition-transform duration-300" />
               <span className="font-serif text-2xl font-bold tracking-wider text-white">
                 RB<span className="text-gold">3</span>
@@ -22,20 +19,23 @@ export function Footer() {
             <div className="flex gap-4">
               <a
                 href="#"
-                className="w-10 h-10 rounded-full bg-white/5 flex items-center justify-center text-white/60 hover:text-gold hover:bg-gold/10 transition-all">
-                
+                aria-label="Instagram"
+                className="w-10 h-10 rounded-full bg-white/5 inline-flex items-center justify-center text-white/60 hover:text-gold hover:bg-gold/10 transition-all"
+              >
                 <Instagram className="w-5 h-5" />
               </a>
               <a
                 href="#"
-                className="w-10 h-10 rounded-full bg-white/5 flex items-center justify-center text-white/60 hover:text-gold hover:bg-gold/10 transition-all">
-                
+                aria-label="Facebook"
+                className="w-10 h-10 rounded-full bg-white/5 inline-flex items-center justify-center text-white/60 hover:text-gold hover:bg-gold/10 transition-all"
+              >
                 <Facebook className="w-5 h-5" />
               </a>
               <a
                 href="#"
-                className="w-10 h-10 rounded-full bg-white/5 flex items-center justify-center text-white/60 hover:text-gold hover:bg-gold/10 transition-all">
-                
+                aria-label="Twitter"
+                className="w-10 h-10 rounded-full bg-white/5 inline-flex items-center justify-center text-white/60 hover:text-gold hover:bg-gold/10 transition-all"
+              >
                 <Twitter className="w-5 h-5" />
               </a>
             </div>
@@ -47,32 +47,32 @@ export function Footer() {
               <li>
                 <a
                   href="#services"
-                  className="text-white/60 hover:text-gold transition-colors text-sm">
-                  
+                  className="text-white/60 hover:text-gold transition-colors text-sm"
+                >
                   Services
                 </a>
               </li>
               <li>
                 <a
                   href="#about"
-                  className="text-white/60 hover:text-gold transition-colors text-sm">
-                  
+                  className="text-white/60 hover:text-gold transition-colors text-sm"
+                >
                   Our Story
                 </a>
               </li>
               <li>
                 <a
                   href="#stylists"
-                  className="text-white/60 hover:text-gold transition-colors text-sm">
-                  
+                  className="text-white/60 hover:text-gold transition-colors text-sm"
+                >
                   The Team
                 </a>
               </li>
               <li>
                 <a
                   href="#gallery"
-                  className="text-white/60 hover:text-gold transition-colors text-sm">
-                  
+                  className="text-white/60 hover:text-gold transition-colors text-sm"
+                >
                   Gallery
                 </a>
               </li>
@@ -85,24 +85,24 @@ export function Footer() {
               <li>
                 <a
                   href="#"
-                  className="text-white/60 hover:text-gold transition-colors text-sm">
-                  
+                  className="text-white/60 hover:text-gold transition-colors text-sm"
+                >
                   Privacy Policy
                 </a>
               </li>
               <li>
                 <a
                   href="#"
-                  className="text-white/60 hover:text-gold transition-colors text-sm">
-                  
+                  className="text-white/60 hover:text-gold transition-colors text-sm"
+                >
                   Terms of Service
                 </a>
               </li>
               <li>
                 <a
                   href="#"
-                  className="text-white/60 hover:text-gold transition-colors text-sm">
-                  
+                  className="text-white/60 hover:text-gold transition-colors text-sm"
+                >
                   Cancellation Policy
                 </a>
               </li>
@@ -119,6 +119,6 @@ export function Footer() {
           </p>
         </div>
       </div>
-    </footer>);
-
+    </footer>
+  );
 }

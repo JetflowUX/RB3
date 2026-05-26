@@ -1,6 +1,6 @@
-import React from 'react';
-import { motion } from 'framer-motion';
-import { MapPin, Phone, Clock, Calendar } from 'lucide-react';
+import React from "react";
+import { motion } from "framer-motion";
+import { MapPin, Phone, Clock, Calendar } from "lucide-react";
 export function Booking() {
   return (
     <section id="booking" className="py-24 relative z-10">
@@ -8,7 +8,7 @@ export function Booking() {
         <div className="glass-card overflow-hidden">
           <div className="grid lg:grid-cols-5">
             {/* Contact Info Side */}
-            <div className="lg:col-span-2 bg-purple-surface/80 p-10 lg:p-12 border-b lg:border-b-0 lg:border-r border-gold/10">
+            <div className="lg:col-span-2 bg-purple-surface/80 p-6 md:p-10 lg:p-12 border-b lg:border-b-0 lg:border-r border-gold/10">
               <h3 className="text-3xl font-serif font-bold mb-2">Visit Us</h3>
               <p className="text-white/60 font-light mb-10">
                 Experience the best hair in Charlotte.
@@ -62,7 +62,7 @@ export function Booking() {
             </div>
 
             {/* Form Side */}
-            <div className="lg:col-span-3 p-10 lg:p-12">
+            <div className="lg:col-span-3 p-6 md:p-10 lg:p-12">
               <div className="mb-8">
                 <h3 className="text-3xl font-serif font-bold mb-2">
                   Request Appointment
@@ -76,33 +76,50 @@ export function Booking() {
               <form className="space-y-6" onSubmit={(e) => e.preventDefault()}>
                 <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
                   <div className="space-y-2">
-                    <label className="text-sm font-medium text-white/80">
+                    <label
+                      htmlFor="fullName"
+                      className="text-sm font-medium text-white/80"
+                    >
                       Full Name
                     </label>
                     <input
+                      id="fullName"
+                      name="fullName"
                       type="text"
                       className="w-full bg-white/5 border border-white/10 rounded-lg px-4 py-3 text-white placeholder:text-white/30 focus:outline-none focus:border-gold focus:ring-1 focus:ring-gold transition-colors"
-                      placeholder="Jane Doe" />
-                    
+                      placeholder="Jane Doe"
+                    />
                   </div>
                   <div className="space-y-2">
-                    <label className="text-sm font-medium text-white/80">
+                    <label
+                      htmlFor="phone"
+                      className="text-sm font-medium text-white/80"
+                    >
                       Phone Number
                     </label>
                     <input
+                      id="phone"
+                      name="phone"
                       type="tel"
                       className="w-full bg-white/5 border border-white/10 rounded-lg px-4 py-3 text-white placeholder:text-white/30 focus:outline-none focus:border-gold focus:ring-1 focus:ring-gold transition-colors"
-                      placeholder="(704) 555-0000" />
-                    
+                      placeholder="(704) 555-0000"
+                    />
                   </div>
                 </div>
 
                 <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
                   <div className="space-y-2">
-                    <label className="text-sm font-medium text-white/80">
+                    <label
+                      htmlFor="service"
+                      className="text-sm font-medium text-white/80"
+                    >
                       Service Interested In
                     </label>
-                    <select className="w-full bg-white/5 border border-white/10 rounded-lg px-4 py-3 text-white focus:outline-none focus:border-gold focus:ring-1 focus:ring-gold transition-colors appearance-none">
+                    <select
+                      id="service"
+                      name="service"
+                      className="w-full bg-white/5 border border-white/10 rounded-lg px-4 py-3 text-white focus:outline-none focus:border-gold focus:ring-1 focus:ring-gold transition-colors appearance-none"
+                    >
                       <option value="" className="bg-purple-base">
                         Select a service...
                       </option>
@@ -124,34 +141,45 @@ export function Booking() {
                     </select>
                   </div>
                   <div className="space-y-2">
-                    <label className="text-sm font-medium text-white/80">
+                    <label
+                      htmlFor="preferredDate"
+                      className="text-sm font-medium text-white/80"
+                    >
                       Preferred Date
                     </label>
                     <div className="relative">
                       <input
+                        id="preferredDate"
+                        name="preferredDate"
                         type="date"
-                        className="w-full bg-white/5 border border-white/10 rounded-lg px-4 py-3 text-white focus:outline-none focus:border-gold focus:ring-1 focus:ring-gold transition-colors appearance-none [&::-webkit-calendar-picker-indicator]:opacity-0 [&::-webkit-calendar-picker-indicator]:absolute [&::-webkit-calendar-picker-indicator]:w-full" />
-                      
+                        className="w-full bg-white/5 border border-white/10 rounded-lg px-4 py-3 text-white focus:outline-none focus:border-gold focus:ring-1 focus:ring-gold transition-colors appearance-none [&::-webkit-calendar-picker-indicator]:opacity-0 [&::-webkit-calendar-picker-indicator]:absolute [&::-webkit-calendar-picker-indicator]:w-full"
+                      />
+
                       <Calendar className="absolute right-4 top-1/2 -translate-y-1/2 w-5 h-5 text-white/40 pointer-events-none" />
                     </div>
                   </div>
                 </div>
 
                 <div className="space-y-2">
-                  <label className="text-sm font-medium text-white/80">
+                  <label
+                    htmlFor="notes"
+                    className="text-sm font-medium text-white/80"
+                  >
                     Additional Notes
                   </label>
                   <textarea
+                    id="notes"
+                    name="notes"
                     rows={3}
                     className="w-full bg-white/5 border border-white/10 rounded-lg px-4 py-3 text-white placeholder:text-white/30 focus:outline-none focus:border-gold focus:ring-1 focus:ring-gold transition-colors resize-none"
-                    placeholder="Tell us about your hair goals..." />
-                  
+                    placeholder="Tell us about your hair goals..."
+                  />
                 </div>
 
                 <button
                   type="submit"
-                  className="btn-primary w-full py-4 text-lg">
-                  
+                  className="btn-primary w-full py-4 text-lg"
+                >
                   Submit Request
                 </button>
               </form>
@@ -159,6 +187,6 @@ export function Booking() {
           </div>
         </div>
       </div>
-    </section>);
-
+    </section>
+  );
 }
