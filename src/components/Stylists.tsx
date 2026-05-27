@@ -26,21 +26,28 @@ function portraitDataUrl(name: string) {
   return `data:image/svg+xml;utf8,${encodeURIComponent(svg)}`;
 }
 
+// Curated royalty-free images from Unsplash with a safe fallback to the SVG placeholder.
 const stylists = [
   {
     name: "Marcus Vance",
     title: "Master Barber / Founder",
     bio: "15 years of precision cutting. The original Rock Boss.",
+    image:
+      "https://images.unsplash.com/photo-1524504388940-b1c1722653e1?auto=format&fit=crop&w=900&q=80",
   },
   {
     name: "Elena Rostova",
     title: "Senior Colorist",
     bio: "Editorial styling and custom color formulations.",
+    image:
+      "https://images.unsplash.com/photo-1551836022-d5d88e9218df?auto=format&fit=crop&w=900&q=80",
   },
   {
     name: "Julian Hayes",
     title: "Style Director",
     bio: "Specializing in modern texture and classic tapers.",
+    image:
+      "https://images.unsplash.com/photo-1544005313-94ddf0286df2?auto=format&fit=crop&w=900&q=80",
   },
 ];
 
@@ -113,10 +120,15 @@ export function Stylists() {
             >
               <div className="aspect-[3/4] w-full bg-brand-purple-900 overflow-hidden relative mb-6">
                 <img
-                  src={portraitDataUrl(stylist.name)}
+                  src={stylist.image || portraitDataUrl(stylist.name)}
                   alt={stylist.name}
                   loading="lazy"
                   decoding="async"
+                  onError={(e) => {
+                    (e.currentTarget as HTMLImageElement).src = portraitDataUrl(
+                      stylist.name,
+                    );
+                  }}
                   className="w-full h-full object-cover opacity-80 group-hover:opacity-100 group-hover:scale-105 transition-all duration-700 mix-blend-luminosity group-hover:mix-blend-normal"
                 />
 
