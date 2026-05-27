@@ -1,6 +1,6 @@
-import React from 'react';
-import { motion } from 'framer-motion';
-import { ArrowRight, Phone, Clock } from 'lucide-react';
+import React from "react";
+import { motion } from "framer-motion";
+import { ArrowRight, Phone, Clock } from "lucide-react";
 export function BookingCta() {
   return (
     <section id="book" className="py-24 lg:py-32 relative bg-brand-purple-900">
@@ -13,8 +13,9 @@ export function BookingCta() {
               alt="Salon interior"
               loading="lazy"
               decoding="async"
-              className="w-full h-full object-cover opacity-40 mix-blend-luminosity" />
-            
+              className="w-full h-full object-cover opacity-40 mix-blend-luminosity"
+            />
+
             <div className="absolute inset-0 bg-gradient-to-r from-brand-purple-900/90 to-brand-purple-900/40"></div>
           </div>
 
@@ -23,19 +24,19 @@ export function BookingCta() {
             <motion.div
               initial={{
                 opacity: 0,
-                x: -30
+                x: -30,
               }}
               whileInView={{
                 opacity: 1,
-                x: 0
+                x: 0,
               }}
               viewport={{
-                once: true
+                once: true,
               }}
               transition={{
-                duration: 0.8
-              }}>
-              
+                duration: 0.8,
+              }}
+            >
               <h2 className="text-4xl md:text-5xl lg:text-6xl font-serif mb-6 leading-tight">
                 Ready for the cut <br />
                 <span className="italic text-brand-gold-400">
@@ -49,8 +50,8 @@ export function BookingCta() {
 
               <a
                 href="#"
-                className="inline-flex items-center justify-center px-8 py-4 text-sm uppercase tracking-widest font-medium text-brand-purple-900 bg-brand-gold-500 hover:bg-brand-gold-400 transition-colors rounded-full">
-                
+                className="inline-flex items-center justify-center px-8 py-4 text-sm uppercase tracking-widest font-medium text-brand-purple-900 bg-brand-gold-500 hover:bg-brand-gold-400 transition-colors rounded-full"
+              >
                 Book Appointment <ArrowRight size={16} className="ml-2" />
               </a>
             </motion.div>
@@ -58,21 +59,21 @@ export function BookingCta() {
             <motion.div
               initial={{
                 opacity: 0,
-                y: 30
+                y: 30,
               }}
               whileInView={{
                 opacity: 1,
-                y: 0
+                y: 0,
               }}
               viewport={{
-                once: true
+                once: true,
               }}
               transition={{
                 duration: 0.8,
-                delay: 0.2
+                delay: 0.2,
               }}
-              className="glass-panel bg-brand-purple-900/60 p-8 md:p-10 rounded-2xl lg:ml-auto w-full max-w-md">
-              
+              className="glass-panel bg-brand-purple-900/60 p-8 md:p-10 rounded-2xl lg:ml-auto w-full max-w-md"
+            >
               <div className="space-y-8">
                 <div>
                   <h3 className="text-xs uppercase tracking-[0.2em] text-brand-gold-400 mb-4 flex items-center gap-2">
@@ -110,6 +111,6 @@ export function BookingCta() {
           </div>
         </div>
       </div>
-    </section>);
-
+    </section>
+  );
 }
